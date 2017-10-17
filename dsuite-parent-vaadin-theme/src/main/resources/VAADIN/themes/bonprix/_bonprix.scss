@@ -1,0 +1,33 @@
+// Import custom variables
+@import "shared/variables";
+@import "shared/utils";
+
+// Import Valo theme mixin
+@import "../valo/valo";
+
+// Import custom font mixins
+@import "../bonprix/bpfonts/FontBonprix";
+@import "../bonprix/bpfonts/bpfonts";
+@import "../base/fonts/fonts.scss";
+
+// Include bpfonts directly to avoid trapping inside a parent selector
+@include bpfonts;
+
+@include fonts;
+
+// Import component specific mixins
+@import "components/all";
+
+// Import classes specific mixins
+@import "classes/all";
+
+/**
+ * The main bonprix theme mixin, which outputs all the selectors and properties to produce
+ * the variation specified by global variables. Should not be included multiple times
+ * per compilation.
+ */
+@mixin bonprix {
+    @include valo;
+    @include bp-components;
+    @include bp-classes;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="dsuite-parent-demo-service-impl-1.3-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+        <dependent-module archiveName="dsuite-parent-jersey-war-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-jersey-war/dsuite-parent-jersey-war">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-spring-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-spring/dsuite-parent-spring">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-jersey-client-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-jersey-client/dsuite-parent-jersey-client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-jersey-server-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-jersey-server/dsuite-parent-jersey-server">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-jpa-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-jpa/dsuite-parent-jpa">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-common-api-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-common-api/dsuite-parent-common-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-security-server-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-security-server/dsuite-parent-security-server">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-security-client-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-security-client/dsuite-parent-security-client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dsuite-parent-demo-service-api-1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dsuite-parent-demo-service-api/dsuite-parent-demo-service-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="dsuite-parent-demo-service-impl"/>
+        <property name="java-output-path" value="/dsuite-parent-demo-service-impl/target/classes"/>
+    </wb-module>
+</project-modules>

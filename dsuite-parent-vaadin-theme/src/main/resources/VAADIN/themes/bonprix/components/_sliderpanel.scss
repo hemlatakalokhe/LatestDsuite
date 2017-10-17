@@ -1,0 +1,27 @@
+@mixin bp-sliderpanel($primary-stylename: v-sliderpanel) {
+	
+	.#{$primary-stylename}-wrapper {
+		.#{$primary-stylename}-navigator {
+			.v-sliderpanel-tab {				
+				.#{$primary-stylename}-caption {
+					font-size: $bp-font-size-caption;
+					font-weight: $bp-font-weight-caption;
+					color: $bp-font-color-caption;
+				}
+			}
+		}	
+	}
+	
+	/* sliding panel left or right */
+	.#{$primary-stylename}-wrapper.layout-vertical {
+		.#{$primary-stylename}-navigator {
+			.v-sliderpanel-tab {
+				&.tab-middle {
+		    		margin-top: -20px !important;
+				}
+			}
+		}	
+	}
+	
+		
+}

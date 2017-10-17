@@ -1,0 +1,32 @@
+/* Following colors should not be overridden in child themes */
+// main colors
+$mainColorDark: #32566E !default;
+$mainColorMedium: #7A96A7 !default;
+$mainColorLight: #D1DCE3 !default;
+$mainColorUltraLight: #E4EAEE !default;
+
+// gray colors
+$grayColorUltraDark: #282828 !default;
+$grayColorDark: #464646 !default;
+$grayColorMedium: #969696 !default;
+$grayColorLight: #DCDCDC !default;
+$grayColorUltraLight: #f2f2f2 !default;
+
+// special colors
+$specialColorGreen: #5aaa00 !default;
+$specialColorYellow: #ffc800 !default;
+$specialColorRed: #dc0000 !default;
+
+/* Following colors can be overridden in child themes */
+// secondary colors
+$secondaryColorDark: $mainColorDark !default;
+$secondaryColorMedium: $mainColorMedium !default;
+$secondaryColorLight: $mainColorLight !default;
+$secondaryColorUltraLight: $mainColorUltraLight !default;
+
+// menu colors
+$menuPrimaryBGColor: $grayColorUltraDark !default;
+$menuSecondaryBGColor: $grayColorDark !default;
+$menuPrimaryFontColor: $grayColorUltraLight !default;
+$menuSecondaryFontColor: $grayColorMedium !default;
+$menuLightGrayBGColor: $grayColorUltraLight !default;

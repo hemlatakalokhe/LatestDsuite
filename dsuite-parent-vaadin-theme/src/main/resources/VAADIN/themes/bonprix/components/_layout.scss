@@ -1,0 +1,9 @@
+@mixin bp-layout($primary-stylename: v-layout) {
+	
+	.#{$primary-stylename} {
+		&.bp-layout-double-spacing > .v-spacing {
+			width: $v-layout-spacing-horizontal * 2;
+			height: $v-layout-spacing-vertical * 2;
+		}
+	}  
+}

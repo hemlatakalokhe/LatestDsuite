@@ -1,0 +1,6 @@
+@mixin bp-textarea($primary-stylename: v-textarea) {
+	
+    .bp-error-textarea{
+	    overflow-y:auto !important;
+     } 
+}

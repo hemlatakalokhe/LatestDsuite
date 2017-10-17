@@ -1,0 +1,83 @@
+@mixin bp-filter($primary-stylename: main-filter) {
+
+    .#{$primary-stylename} {
+        padding: 0px $v-unit-size round($v-unit-size / 2.5);
+        color: $menuPrimaryFontColor;
+        background: $menuPrimaryBGColor;
+
+        $v-font-color: $menuPrimaryFontColor;
+        $v-background-color: $menuSecondaryBGColor;
+        $v-focus-color: $menuSecondaryFontColor;
+        $v-selection-color: $v-focus-color;
+        $v-focus-style: 0 0 1px 0 $v-focus-color;
+        $v-gradient: false;
+        $v-bevel: false;
+        $v-textfield-shadow: 0 2px 3px v-shade;
+        $v-textfield-border: 1px solid v-shade;
+
+        // include the following valo components using the overridden variables above to adjust their look and feel.
+        $v-included-components: button, textfield;
+        @include valo-components;
+
+        .tokenfilter__progressbar {
+            background: rgba($menuPrimaryFontColor .25);
+        }
+        .tokenfilter__progress {
+            background: $menuPrimaryFontColor;
+        }
+        
+        .v-button.icon-only {
+        	padding-top: round($v-unit-size / 2);
+    		margin-left: round($v-unit-size * 2/3);
+    		
+        	.v-icon {
+        		color: #fff;
+        	}
+        }
+        
+        .v-textfield {
+			height: $bp-input-height;
+        }
+        
+        .v-datefield-textfield {
+		    padding-left: 36px;
+		}
+    }
+
+    .#{$primary-stylename} .v-sliderpanel-tab {
+        background-color: $menuPrimaryBGColor;
+    }
+    
+    .has-secondary-navigation {
+    	.#{$primary-stylename},
+    	.v-sliderpanel-wrapper.filter-slider .v-sliderpanel-navigator .v-sliderpanel-tab {
+	    	background-color: $menuSecondaryBGColor;
+	    }
+    }
+    
+    .v-sliderpanel-wrapper.filter-slider {
+    	height: 35px;
+	    	
+	    .v-sliderpanel-navigator {
+	        height: 35px;
+	  
+	    	.v-sliderpanel-tab {
+	    		height: 35px;
+	    		left: auto;
+			    right: $v-unit-size;
+			    position: absolute;
+			    margin-left: 0;
+			    background: $menuPrimaryBGColor;
+	
+				.v-sliderpanel-caption {
+				    padding: 0px 0 0 15px;
+				    font-size: 1em;
+				    color: #fff;
+				}
+				.v-sliderpanel-icon {
+					top: 6px;
+				}
+			}
+	    }
+    }
+}

@@ -1,0 +1,20 @@
+/**
+ *
+ *
+ * @param {string} $primary-stylename (v-radiobutton) - 
+ *
+ * @group radiobutton
+ */
+
+@mixin bp-radiobutton ($primary-stylename: v-radiobutton) {
+    
+	.#{$primary-stylename} {
+		> input:focus ~ label:before {
+			border-color: $secondaryColorMedium !important;
+		}
+		> input:checked ~ label:after {
+			background: $secondaryColorMedium !important;
+		}
+	}
+	
+}

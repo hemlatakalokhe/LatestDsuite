@@ -1,0 +1,112 @@
+@mixin bp-table($primary-stylename: v-table) {
+	
+	.#{$primary-stylename} {
+        @include valo-table-no-horizontal-lines-style;
+    }
+	
+    .#{$primary-stylename}-row-odd {
+        background-color: $secondaryColorUltraLight;
+    }
+
+    // changes should also be made in _grid.scss
+    .#{$primary-stylename}-header-wrap,
+    .#{$primary-stylename}-footer-wrap,
+    .#{$primary-stylename}-header-drag {
+        background: $secondaryColorMedium;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: none;
+    }
+    
+    .#{$primary-stylename}-compact,
+    .#{$primary-stylename}-small {
+      	@include valo-table-spacing-style($row-height: $bp-unit-size--extra-tiny, $cell-padding-horizontal: round($v-table-cell-padding-horizontal / 2));
+      
+      	.#{$primary-stylename}-footer-container,
+    	.#{$primary-stylename}-caption-container {
+    		min-height: 24px;
+    		padding-top: 6px;
+    	}
+    	
+    	.#{$primary-stylename}-header-wrap {
+		   	.#{$primary-stylename}-column-selector:before {
+		        margin-top: 5px;
+			}
+		}	
+    }	
+	
+	.#{$primary-stylename}-header-wrap {
+		.#{$primary-stylename}-column-selector {
+		    background: transparent;
+		    height: 100%;
+		    box-shadow: none;
+		    border: 0;
+		    opacity: 1;
+		    
+		    &:before {
+			    content: "\f0c9";
+			    font-size: 14px;
+		        margin-top: 7px;
+			    margin-left: -1px;
+			    display: block;
+			    color: #fff;
+			}
+		}
+	}
+	
+	.#{$primary-stylename}-cell-wrapper {
+		.v-button-link {
+		      &:hover {
+		      	color: $secondaryColorLight;
+		      }
+		}		
+		
+		.v-button:not([class*="v-button-"]) {
+		  	display: inline-block !important;
+	  	    background: transparent;
+		    border: 0px;
+		    border-radius: 0px;
+		    
+			font-size: $bp-font-size-icon;
+			color: $secondaryColorMedium;
+
+			&:hover {
+				$color: darken($secondaryColorMedium, 20%);
+				@if is-dark-color($secondaryColorMedium) {
+					$color: lighten($secondaryColorMedium, 20%);
+				}
+				color: $color;
+				
+				&:after {
+					background: transparent;
+				}
+			}					    
+		}
+	}
+	
+	.#{$primary-stylename}-row-odd.v-selected,
+	.#{$primary-stylename}-row.v-selected {
+		.#{$primary-stylename}-cell-wrapper {
+			.v-button-link {
+		       	color: #fff;
+		       
+		     	&:hover {
+		      		color: $secondaryColorLight;
+	      		}
+		 	}
+		 	
+		 	.v-button:not([class*="v-button-"]) {
+		 		color: #fff;
+		 		
+		 		&:hover {
+					$color: darken($secondaryColorLight, 20%);
+					@if is-dark-color($secondaryColorLight) {
+						$color: lighten($secondaryColorLight, 20%);
+					}
+					color: $color;
+				}		
+		 	}		
+	  	}		
+	}	
+
+}

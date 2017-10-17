@@ -1,0 +1,92 @@
+// Specific color definitions
+@import "colors";
+
+$v-app-loading-text: "" !default;
+$v-background-color: #fff !default;
+$v-app-background-color: #fff !default;
+
+// Text
+$v-font-family: Arial, sans-serif !default;
+$v-font-size: 12px !default;
+$v-line-height: 1.5 !default;
+$v-font-color: #282828 !default;
+$v-font-weight: 200 !default;
+$v-caption-font-size: $v-font-size !default;
+$v-caption-font-weight: 700 !default;
+$v-link-text-decoration: none !default;
+$v-scaling-factor--tiny: 0.65 !default;
+$v-scaling-factor--huge: 2 !default;
+
+$bp-font-size-caption: round($v-font-size * 1.33);
+$bp-font-size-icon: round($v-font-size * 1.67);
+$bp-font-weight-caption: 300;
+$bp-font-color-caption: $secondaryColorDark;
+$bp-font-color-caption-secondary: $secondaryColorMedium;
+
+$bp-input-height: round($v-font-size * 2);
+
+// Error / success text
+$v-error-indicator-color: $specialColorRed !default;
+$v-required-field-indicator-color: $v-error-indicator-color !default;
+$v-friendly-color: $specialColorGreen !default;
+
+$v-focus-color: $secondaryColorMedium !default;
+$v-focus-style: 0 0 1px 1px rgba($v-focus-color, .5) !default;
+$v-border: 1px solid $secondaryColorLight !default;
+$v-border-radius: 3px !default;
+$v-textfield-border-radius: 3px !default;
+//$v-textfield-bevel: false !default;
+//$v-textfield-shadow: false !default;
+
+$v-shadow: 0 1px 0 (v-shade 0.2) !default;
+$v-bevel: inset 0 1px 0 v-tint !default;
+$v-unit-size: round(2.5 * $v-font-size) !default;
+$bp-unit-size--extra-tiny: round($v-unit-size * 0.65);
+$v-layout-spacing-vertical: round($v-unit-size / 2) !default;
+$v-layout-spacing-horizontal: round($v-unit-size / 2) !default;
+$v-gradient: v-linear 12% !default;
+$v-overlay-shadow: 0 3px 8px v-shade, 0 0 0 1px (v-shade 0.7) !default;
+$v-shadow-opacity: 20% !default;
+// Select menus
+$v-selection-overlay-padding-horizontal: 0 !default;
+$v-selection-overlay-padding-vertical: 5px !default;
+$v-selection-item-border-radius: 0 !default;
+
+// All overlays
+$v-overlay-padding-vertical: 5px !default;
+$v-overlay-padding-horizontal: 10px !default;
+
+// Button
+$v-selection-color: $secondaryColorMedium;
+
+// Table
+$v-table-header-font-size: $v-font-size !default;
+$v-table-border-color: $secondaryColorLight !default;
+
+// Grid
+$v-grid-row-stripe-background-color: $secondaryColorUltraLight;
+$v-grid-header-background-color: $secondaryColorMedium;
+$v-grid-border-size: 1px !default;
+$v-grid-border: $v-grid-border-size solid $v-table-border-color !default;
+$v-grid-cell-vertical-border: $v-grid-border !default;
+$v-grid-cell-horizontal-border: $v-grid-cell-vertical-border !default;
+$v-grid-details-border-bottom: $v-grid-cell-horizontal-border !default;
+$v-grid-details-border-bottom-stripe: $v-grid-cell-horizontal-border !default;
+
+// Panel
+$v-panel-background-color: $secondaryColorUltraLight !default;
+$v-panel-border: 0 !default;
+
+//$v-border: 1px solid (v-shade 0.5) !default;
+//$v-border-radius: 4px !default;
+//$v-bevel: false !default;
+////$v-gradient: false !default;
+//$v-gradient: v-linear 10% !default;
+////$v-shadow: false !default;
+//$v-shadow: 0 2px 3px v-shade !default;
+//$v-textfield-bevel: false !default;
+//$v-textfield-shadow: false !default;
+//$v-textfield-border: 1px solid v-shade !default;
+//$v-overlay-shadow: 0 2px 3px v-shade !default;
+//$v-window-shadow: $v-overlay-shadow !default;
+//$v-panel-border: 1px solid v-shade !default;

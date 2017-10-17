@@ -1,0 +1,39 @@
+@mixin bp-tabsheet($primary-stylename: v-tabsheet) {
+
+	.#{$primary-stylename} {
+	
+		.#{$primary-stylename}-tabcontainer {
+			.v-tabsheet-tabitem {
+			
+				.v-caption {
+					font-size: $bp-font-size-caption;
+					font-weight: $bp-font-weight-caption;
+					color: $bp-font-color-caption-secondary;
+				}
+			
+			}
+			
+			.#{$primary-stylename}-tabitem.#{$primary-stylename}-tabitem-selected {
+			
+				.v-caption {
+					font-size: $bp-font-size-caption;
+					font-weight: $bp-font-weight-caption;
+					color: $bp-font-color-caption;
+				}
+				
+			}
+		}
+		
+		.#{$primary-stylename}-content:not(.#{$primary-stylename}-content-bp-inverted-tabcontent) {
+		    margin-top: round($v-unit-size * 1/3);
+		}
+		
+		.#{$primary-stylename}-content.#{$primary-stylename}-content-bp-inverted-tabcontent {
+		    background: $secondaryColorUltraLight;
+		    border-bottom-left-radius: $v-border-radius;
+		    border-bottom-right-radius: $v-border-radius;
+		}
+		
+	} 
+
+}

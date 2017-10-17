@@ -1,0 +1,20 @@
+.bp-img-container.bp-lazyimage-container-frame-red > div {
+    border: 2px solid red;
+}
+
+.bp-img-container.bp-lazyimage-container-frame-yellow > div {
+    border: 2px solid yellow;
+}
+
+.bp-img-container.bp-lazyimage-container-frame-green > div {
+    border: 2px solid green;
+}
+
+.bp-img-container.bp-lazyimage-container-frame-grey > div {
+    border: 2px solid grey;
+}
+
+.bp-lazyimage-container-margin {
+    margin: 4px 3px 4px 3px;
+}
+

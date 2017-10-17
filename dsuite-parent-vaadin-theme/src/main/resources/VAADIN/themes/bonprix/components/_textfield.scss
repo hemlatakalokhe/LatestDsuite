@@ -1,0 +1,16 @@
+@mixin bp-textfield($primary-stylename: v-textfield) {
+
+	.#{$primary-stylename} {
+		height: $bp-input-height;
+		box-sizing: border-box;
+	}
+	
+	.#{$primary-stylename}.bp-with-button-icon-only-full-width {
+	    width: calc(100% - 30px);
+	}
+	
+	.#{$primary-stylename}.bp-uppercase {
+	    text-transform: uppercase;
+	}
+
+}

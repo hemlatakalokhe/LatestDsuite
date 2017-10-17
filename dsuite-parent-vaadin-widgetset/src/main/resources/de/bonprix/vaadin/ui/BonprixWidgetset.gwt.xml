@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.7.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
+<module>
+	<inherits name="com.vaadin.DefaultWidgetSet" />
+	
+	<!-- Bonprix addons -->
+	<inherits name="org.vaadin.addons.scrollablepanel.WidgetSet" />	
+	<inherits name="org.vaadin.addons.comboboxmultiselect.WidgetSet" />
+	<inherits name="org.vaadin.addons.textfieldmultiline.WidgetSet" />
+	<inherits name="org.vaadin.grid.enhancements.WidgetSet" />
+	
+	<!-- Vaadin addons -->
+	<inherits name="com.vaadin.addon.contextmenu.WidgetSet" />
+	<!-- RatingStars widgetset -->
+	<inherits name="org.vaadin.teemu.ratingstars.gwt.RatingStarsWidgetset" />
+	<!-- LazyLoad widgetset -->
+    <inherits name="org.vaadin.addons.lazyload.WidgetSet" />
+    <!-- Tokenfilter widgetset -->
+    <inherits name="org.vaadin.addons.tokenfilter.WidgetSet" />
+    <!-- Collapsible Panel widgetset -->
+    <inherits name="org.vaadin.addons.collapsiblepanel.WidgetSet" />
+	<!-- SizeReporter widgetset -->
+    <inherits name="com.ejt.vaadin.sizereporter.WidgetSet" />
+	<!-- screenshot component widgetset -->
+    <inherits name="org.vaadin.addons.screenshot.WidgetSet" />
+    <!-- simple filedownloader component widgetset -->
+    <inherits name="org.vaadin.simplefiledownloader.SimplefiledownloaderWidgetset" />
+    <!-- countdownclock widgetset -->
+    <inherits name="org.vaadin.kim.countdownclock.CountdownClockWidgetset" />  
+    <!-- bonprix Magnifier addon widgetset -->
+    <inherits name="org.vaadin.addons.magnifier.WidgetSet" />
+        
+	<!-- external addons -->
+	<inherits name="org.vaadin.sliderpanel.WidgetSet" />
+	<inherits name="org.vaadin.easyuploads.Widgetset" />
+</module>

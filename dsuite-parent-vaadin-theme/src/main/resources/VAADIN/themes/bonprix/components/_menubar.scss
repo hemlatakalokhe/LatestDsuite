@@ -1,0 +1,32 @@
+/**
+ *
+ *
+ * @param {string} $primary-stylename (v-menubar) - 
+ *
+ * @group menubar
+ */
+@mixin bp-menubar ($primary-stylename: v-menubar) {
+
+  .#{$primary-stylename}:not(.bp-menubar-menubar):not(.topMenuBar-globalToolbar):not(.bp-componentbar) {
+  	@include valo-menubar-borderless-style($primary-stylename);
+  
+  	> .#{$primary-stylename}-menuitem {
+		padding: 0;
+	    margin-right: $v-unit-size;
+	    font-size: $bp-font-size-caption;
+	    color: $secondaryColorDark;
+    }
+    > .#{$primary-stylename}-menuitem-selected,
+    > .#{$primary-stylename}-menuitem:active,
+    > .#{$primary-stylename}-menuitem-selected:hover {
+		background: initial;
+		text-shadow: initial;
+		color: $secondaryColorMedium;
+    }
+    
+    > .#{$primary-stylename}-menuitem-icon-only {
+		font-size: $bp-font-size-icon;
+    }
+  
+  }
+}

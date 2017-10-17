@@ -1,0 +1,9 @@
+@import "addons";
+@import "bonprix-blue";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in bonprix-blue.scss */
+.bonprix-blue {
+    @include addons;
+    @include bonprix;
+}

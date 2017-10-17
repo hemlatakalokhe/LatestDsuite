@@ -1,0 +1,96 @@
+@mixin bp-menu($primary-stylename: bp-menubar) {
+	
+    .#{$primary-stylename} {
+        padding-left: $v-layout-margin-left / 2;
+        padding-right: $v-layout-margin-right;
+
+        $v-font-color: $menuSecondaryFontColor;
+        $v-background-color: $menuSecondaryBGColor;
+        $v-focus-color: $menuSecondaryFontColor;
+        $v-selection-color: $v-focus-color;
+        $v-gradient: false;
+        $v-bevel: false;
+        $v-included-components: menubar;
+        background-color: $menuPrimaryBGColor;
+        $v-unit-size--huge: $v-unit-size;
+        @include valo-components;
+
+        .v-menubar-submenu-indicator + .v-menubar-menuitem-caption:after {
+            display: none;
+        }
+        
+        .v-menubar-borderless {
+        	.v-menubar-menuitem {
+        		&.v-menubar-menuitem-checked,
+		        &.v-menubar-menuitem-unchecked {
+		        	.v-menubar-menuitem-caption {
+			        	top: initial;
+			        }
+		        }
+        	}
+        } 
+        
+        .v-menubar > .v-menubar-menuitem {
+            font-family: HelveticaLT, Helvetica, Arial, arial, sans-serif;
+            font-size: 20px;
+            line-height: 30px;
+            padding-left: $v-layout-margin-left / 2;
+            padding-right: $v-layout-margin-right / 2;
+        }
+        .v-menubar-menuitem + .v-menubar-menuitem:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 59%;
+            height: 20px;
+            width: 0;
+            margin: -12px 0 0;
+            border-left: 1px solid $menuSecondaryFontColor !important;
+            background: none;
+        }
+        .v-menubar-menuitem:hover,
+        .v-menubar-menuitem-selected,
+        .v-menubar-menuitem-checked {
+            background: none !important;
+            border: 0 !important;
+            color: $menuPrimaryFontColor !important;
+        }
+
+        // Burger icon
+        .v-menubar-icon-only {
+        	width: 30px;
+        
+        	> .v-menubar-menuitem {
+	            margin: 0;
+	            padding: 0;
+	            width: 30px;
+	            .v-icon {
+	                margin: 0 !important;
+	            }
+			}
+        }       
+    }
+
+    .#{$primary-stylename}.primary {
+        background-color: $menuPrimaryBGColor;
+    }
+
+    .#{$primary-stylename}.secondary {
+        background-color: $menuSecondaryBGColor;
+    }
+
+    // Burger popup content
+    .topMenuBar-globalToolbar {    
+        > .v-menubar-menuitem {
+            font-family: HelveticaLT, Helvetica, Arial, arial, sans-serif;
+            font-size: 16px;
+            padding-top: 6px;
+            padding-bottom: 4px;
+            
+            .v-menubar-menuitem-caption {
+         		margin-left: 8px;
+            }
+        }
+    }
+}

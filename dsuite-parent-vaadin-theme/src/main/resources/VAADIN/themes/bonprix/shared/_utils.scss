@@ -1,0 +1,50 @@
+// Spacing
+.bp-u-margin--top {
+    margin-top: $v-layout-margin-top;
+}
+
+.bp-u-margin--bottom {
+    margin-bottom: $v-layout-margin-bottom;
+}
+
+.bp-u-margin--left {
+    margin-left: $v-layout-margin-left;
+}
+
+.bp-u-margin--right {
+    margin-right: $v-layout-margin-right;
+}
+
+// Colors
+.bp-color--ultra-light {
+    color: $mainColorUltraLight;
+}
+
+.bp-color--light {
+    color: $mainColorLight;
+}
+
+.bp-color--medium {
+    color: $mainColorMedium;
+}
+
+.bp-color--dark {
+    color: $mainColorDark;
+}
+
+// Background Colors
+.bp-bg--ultra-light {
+    background: $mainColorUltraLight;
+}
+
+.bp-bg--light {
+    background: $mainColorLight;
+}
+
+.bp-bg--medium {
+    background: $mainColorMedium;
+}
+
+.bp-bg--dark {
+    background: $mainColorDark;
+}

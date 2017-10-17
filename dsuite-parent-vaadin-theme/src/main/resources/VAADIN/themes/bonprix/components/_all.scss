@@ -1,0 +1,64 @@
+
+@import "main";
+@import "menu";
+@import "filter";
+@import "table";
+@import "grid";
+@import "window";
+@import "menubar";
+@import "buttonbar";
+@import "button";
+@import "componentbar";
+@import "radiobutton";
+@import "panel";
+@import "tabsheet";
+@import "richtextarea";
+@import "textfield";
+@import "filterselect";
+@import "datefield";
+@import "sliderpanel";
+@import "textarea";
+@import "infolabel";
+@import "ratingstars";
+@import "layout";
+@import "formlayout";
+@import "loading-indicator";
+@import "label";
+@import "imagebrowser";
+@import "defaultview";
+
+/**
+ * Outputs all the selectors and properties for all individual components to produce
+ * the variation specified by global variables.
+ */
+@mixin bp-components {
+    @include bp-main;
+    @include bp-menu;
+    @include bp-filter;
+    @include bp-table;
+    @include bp-grid;
+    @include bp-window;
+    @include bp-menubar;
+    @include bp-buttonbar;
+    @include bp-button;
+    @include bp-componentbar;
+    @include bp-radiobutton;
+    @include bp-panel;
+    @include bp-tabsheet;
+    @include bp-richtextarea;
+    @include bp-textfield;
+    @include bp-filterselect;
+    @include bp-datefield;
+    @include bp-sliderpanel;
+    @include bp-textarea;
+    @include bp-infolabel;
+    @include bp-infolabel;
+    @include bp-imagebrowser;
+    @include bp-ratingstars;
+    @include bp-layout($primary-stylename: v-horizontal);
+    @include bp-layout($primary-stylename: v-vertical);
+    @include bp-formlayout;
+    @include bp-loading-indicator;
+    @include bp-label;
+    @include bp-defaultview;
+}

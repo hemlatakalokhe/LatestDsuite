@@ -1,0 +1,26 @@
+@mixin bp-label($primary-stylename: v-label) {
+    .#{$primary-stylename} {
+            
+        &.#{$primary-stylename}-success,
+        &.#{$primary-stylename}-warning,
+        &.#{$primary-stylename}-failure {
+			border: 0px solid #fff;
+        	padding: 5px;    
+        }
+        
+        &.#{$primary-stylename}-warning {
+		    background: white;
+		    color: #474747;
+		    font-weight: 300;
+		    font-size: 11px;
+		    
+		    &:before {
+		        font-family: ThemeIcons;
+			    content: "\f05e";
+			    margin-right: 0.5em;
+			    margin-left: -15px;
+			    color: rgb(255, 200, 0);
+			}
+		}
+    }
+}

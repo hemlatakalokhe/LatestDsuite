@@ -1,0 +1,15 @@
+@mixin bp-imagebrowser($primary-stylename: bp-imagebrowser) {
+
+		.#{$primary-stylename} {
+		.bp-preview-image{
+			max-height: 170px;
+		    max-width: 170px;
+		    display: block;
+		    width: auto;
+		    height: auto;
+	    }
+	    .image-wrapper{
+	    	overflow : auto !important;
+	 }
+	}
+}

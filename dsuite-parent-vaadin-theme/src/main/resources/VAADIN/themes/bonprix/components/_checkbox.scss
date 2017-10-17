@@ -1,0 +1,19 @@
+/**
+ *
+ *
+ * @param {string} $primary-stylename (v-checkbox) - 
+ *
+ * @group menubar
+ */
+@mixin bp-checkbox ($primary-stylename: v-checkbox) {
+    
+	.#{$primary-stylename} {
+		> input:focus ~ label:before {
+			border-color: $secondaryColorMedium !important;
+		}
+		> input:checked ~ label:after {
+			color: $secondaryColorMedium !important;
+		}
+	}
+
+}

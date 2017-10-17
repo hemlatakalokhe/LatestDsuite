@@ -1,0 +1,9 @@
+@mixin bp-slider($primary-stylename: bp-slider) {
+
+		.#{$primary-stylename} {
+		.bp-slider-cursor{
+			cursor: pointer !important;
+	    }
+	}
+
+}

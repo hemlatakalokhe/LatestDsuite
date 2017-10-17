@@ -1,0 +1,8 @@
+@mixin bp-formlayout($primary-stylename: v-formlayout) {
+	
+	.#{$primary-stylename} {
+		&.bp-formlayout--no-padding-last-row [class*="lastrow"] > td {
+			padding-bottom: 0;
+		}
+	}  
+}

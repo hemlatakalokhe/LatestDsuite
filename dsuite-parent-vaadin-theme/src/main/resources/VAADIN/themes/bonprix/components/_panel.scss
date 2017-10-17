@@ -1,0 +1,53 @@
+@mixin bp-panel($primary-stylename: v-panel) {
+     
+	.#{$primary-stylename} {
+	
+		.#{$primary-stylename}-captionwrap {
+		
+			.#{$primary-stylename}-caption {
+				font-size: $bp-font-size-caption;
+				font-weight: $bp-font-weight-caption;
+				color: $bp-font-color-caption;
+			    padding-left: 0;
+			}
+		}  
+		
+		.#{$primary-stylename}-content-scroll-divider.v-scrollable {
+			overflow-x: hidden;
+		}
+
+		
+		.#{$primary-stylename}-caption {
+			span.gwt-InlineHTML + span {
+			    margin-left: round($v-unit-size / 4);
+			}
+		}
+	} 
+	
+	.#{$primary-stylename}.bp-inverted-tabcontent {
+			.v-panel-content {
+				padding: round($v-unit-size / 2);
+			}
+	}
+	
+	.#{$primary-stylename}-bp-panel--inverted {
+	
+		@include valo-panel-style ($background-color : #fff, $shadow : 0 0 transparent);
+		
+		.#{$primary-stylename}-captionwrap {
+		
+			.#{$primary-stylename}-caption {
+				background: $secondaryColorUltraLight;
+				box-shadow: initial;
+			}
+		}
+	}
+	
+	 .bp-error-panel {				
+	        margin :15px;
+	        font-size: 13px;
+	        background:transparent !important;
+     }
+
+	
+}

@@ -1,0 +1,142 @@
+// TODO: tidy up styles!!!
+@mixin bp-main {
+	
+    .v-verticallayout-mainUiLayout, .navigationOverviewScreen {
+        overflow: hidden;
+    }
+
+    .appBox-wrapper {
+        padding-right: 100px;
+    }
+    .appBox {
+        font-size: 50px;
+        font-family: sans-serif;
+        color: white;
+        width: 130px;
+        height: 110px;
+        padding-top: 20px;
+        cursor: pointer;
+        text-align: center;
+        background: $mainColorMedium;
+        border: 1px solid white;
+        .caption {
+            font-size: 15px;
+            width: 100%;
+            text-align: center;
+        }
+        &:hover {
+            background: rgb(146, 190, 208);
+        }
+    }
+    .logo-box {
+        margin: -8px 10px 5px 5px;
+        max-height: 40px;
+        max-width: 90px;
+    }
+    .v-slot-footerPanel {
+        padding: 0 $v-unit-size;
+        background: $menuPrimaryBGColor;
+        color: $menuPrimaryFontColor;
+    }
+    .v-slot-footerPanel .v-expand .v-slot {
+        padding-top: 2px;
+    }
+    .v-slot-footerDetails .v-label-footerDetails {
+        text-align: right;
+    }
+    .v-label-footer-environment-localhost, .v-label-footer-environment-development {
+        font-weight: bold;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .v-label-startview-environment-localhost, .v-label-startview-environment-development {
+        font-weight: bold;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+        padding: 10px;
+        line-height: 40px;
+        margin-top: 40px;
+    }
+    .v-label-footer-environment-localhost, .v-label-startview-environment-localhost {
+        background-color: rgba(105, 105, 105, 0.5);
+    }
+    .v-label-startview-environment-development, .v-label-startview-environment-development {
+        background-color: rgba(165, 42, 42, 0.5);
+    }
+
+    .v-tabsheet-content-tabbed-module > .v-tabsheet-tabsheetpanel > .v-scrollable {
+        padding: 5px 30px 17px 20px;
+    }
+
+    .v-tabsheet-tabbed-module .v-tabsheet-tabcontainer-tabbed-module {
+        box-shadow: rgb(136, 136, 136) 0px 3px 10px;
+        margin-bottom: 15px;
+        background-color: rgb(233, 238, 241);
+
+        .v-tabsheet-itemcell {
+            vertical-align: center;
+        }
+
+        .v-tabsheet-tabitem .v-caption {
+            padding: 3px 20px 3px 20px;
+        }
+    }
+
+    .titleLabel {
+        padding-left: 40px;
+        font-size: 18px;
+    }
+    #mainUiLayout {
+        width: 100%;
+        height: 100%;
+    }
+    #navigation-sidebar {
+        position: absolute;
+        z-index: 999;
+    }
+    .imagebrowser-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .v-label.collapsable-name-values-panel-header {
+        font-weight: bold;
+    }
+    .collapsable-name-values-panel-toggle .v-button-caption {
+        outline: 0px !important;
+    }
+    .v-label.collapsable-name-values-panel-value {
+        margin-left: 25px;
+    }
+    .separator-horizontal {
+        border-right: 1px solid black;
+    }
+    .separator-vertical {
+        border-top: 1px solid black;
+    }
+
+    .v-caption .v-icon.FontBonprix {
+        font-size: 16px;
+    }
+
+    .v-window-loadingWindow .v-window-outerheader {
+        display: none;
+    }
+
+    .v-window-loadingWindow, .v-window-loadingWindow .v-window-contents {
+        background: #f8f8f8 !important;
+    }
+
+    .v-label-loadingText {
+        text-align: center !important;
+        vertical-align: middle;
+        padding-top: 10px;
+        font-size: 20px !important;
+        line-height: 25px !important;
+    }
+    
+    .content-margin{
+	 	margin-top: 15px !important;
+	 }
+    
+}

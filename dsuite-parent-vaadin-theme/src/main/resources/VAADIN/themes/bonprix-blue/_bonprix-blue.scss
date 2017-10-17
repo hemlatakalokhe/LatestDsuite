@@ -1,0 +1,19 @@
+// Import bonprix theme color
+@import "../bonprix/shared/colors";
+
+/* Override custom variables */
+// secondary colors
+$secondaryColorDark: $grayColorDark;
+$secondaryColorMedium: $grayColorMedium;
+$secondaryColorLight: $grayColorLight;
+$secondaryColorUltraLight: $grayColorUltraLight;
+
+// menu colors
+$menuPrimaryBGColor: $mainColorDark;
+$menuSecondaryBGColor: lighten($mainColorDark, 4%);
+$menuPrimaryFontColor: $mainColorUltraLight;
+$menuSecondaryFontColor: $mainColorMedium;
+$menuLightGrayBGColor: $mainColorLight;
+
+// Import bonprix theme mixin
+@import "../bonprix/bonprix";

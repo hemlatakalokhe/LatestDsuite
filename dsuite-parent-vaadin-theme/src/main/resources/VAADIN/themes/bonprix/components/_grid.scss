@@ -1,0 +1,506 @@
+@mixin bp-grid($primary-stylename: v-grid) {
+
+	.#{$primary-stylename} {
+		.v-grid-tablewrapper {
+	    	.#{$primary-stylename}-header {
+	    		border-bottom: $secondaryColorLight 2px solid;
+
+	    	    .#{$primary-stylename}-cell {
+			        background: $v-grid-header-background-color;
+			        font-weight: bold;
+			        color: #fff;
+			        text-shadow: none;
+	    	    }
+
+	    	    .bp-grid-filter-header {
+			        .#{$primary-stylename}-cell {
+			        	padding: 0px;
+			        	background: white;
+			        	color: black;
+					    box-sizing: border-box;
+					    overflow: hidden;
+					    width: 0px;
+						
+						.v-textfield,
+						.v-textarea,
+						.v-filterselect,
+						.v-datefield,
+						.v-filterselect-input,
+						.v-datefield-textfield,
+						.v-horizontallayout {
+							width: 100%;
+							height: 103%;
+							display: block;
+						}
+
+						.v-textfield,
+						.v-textarea,
+						.v-richtextarea {
+							@include valo-textfield-style($unit-size: $v-unit-size, $border-radius: 0, $border: none, $shadow: none, $padding: round($v-unit-size/9) round($v-unit-size/2));
+						}
+
+						.v-filterselect input {
+							@include valo-textfield-style($unit-size: $v-unit-size, $border-radius: 0, $border: none, $shadow: none, $padding: round($v-unit-size/9) round($v-unit-size * 1.5) round($v-unit-size/9) round($v-unit-size/2));
+						}
+
+						.v-datefield input {
+							@include valo-textfield-style($unit-size: $v-unit-size, $border-radius: 0, $border: none, $shadow: none, $padding: round($v-unit-size/9) round($v-unit-size/2) round($v-unit-size/9) round($v-unit-size * 1.5));
+						}
+
+						.v-textfield,
+						.v-textarea,
+						.v-filterselect input,
+						.v-datefield input,
+						.v-richtextarea {
+							display: block;
+
+							&:focus {
+								box-shadow: none;
+							}
+						}
+
+					    .v-textfield-prompt,
+					    .v-textarea-prompt,
+					    .v-filterselect-prompt input,
+					    .v-datefield-prompt input {
+					      	@include valo-textfield-prompt-style;
+					    }
+
+					    .v-textarea,
+					    .v-richtextarea {
+					      	height: auto;
+					    }
+
+					    .v-filterselect [class$="button"],
+					    .v-datefield [class*="button"] {
+					    	top: 0px;
+					    }
+			        }
+				}
+			
+				tr.#{$primary-stylename}-row.bp-grid-rotate-header-content {
+					th > div {
+					 	transform: rotate(90deg);   
+					  	text-align: center; 
+					}
+				
+					th.#{$primary-stylename}-cell {
+						height: 60px; 
+						width: 32px; 
+						
+						 div.v-grid-column-default-header-content { 
+							overflow: visible !important; 
+						}
+					}
+				}
+		    }
+
+		    .#{$primary-stylename}-body {
+		    	.#{$primary-stylename}-row-selected {
+		    		.#{$primary-stylename}-cell {
+		    			color: white;
+		    			
+		    			.v-nativebutton,
+		    			.grid-action-panel .grid-action-widget {
+		    				color: white;
+		    			}
+		    		
+		    			.v-filterselect .c-combobox-input,
+		    			.v-datefield input.v-datefield-textfield {
+				    		color: white;
+		    			}
+		    			
+		    			.v-datefield-button,
+		    			.c-combobox-button {
+		    				color: white;
+		    				
+		    				&:hover {
+		    					color: $secondaryColorLight;
+		    				}
+		    			}
+		    			
+		    			.c-combobox-button:before {
+		    				color: inherit;
+		    			}
+		    			
+			    		.v-textfield,
+			    		.c-combobox-input {
+			    			color: white;
+			    		}
+			    		
+			    		.v-textfield[disabled],
+				    	.v-datefield input[disabled],
+						.v-filterselect input[disabled] {
+							color: #d1d1d1;
+						}
+	
+						.v-filterselect button[disabled],
+						.v-datefield button[disabled] {
+							cursor: initial;
+							
+							&:before {
+								color: #d1d1d1;
+							}
+						}
+			    		
+		    		}
+		    	}
+				
+				
+		    	.#{$primary-stylename}-cell {
+			   	    border-bottom: none;
+
+			   	    .grid-action-panel {
+			   	    	height: 100%;
+			   	    	width: 100%;
+			   	    	text-align: center;
+
+			   	    	.grid-action-widget {
+						  	background: transparent;
+						    border: 0px;
+						    border-radius: 0px;
+						    
+						    float: none;
+						    padding: 0;
+    						
+							font-size: $bp-font-size-icon;
+							color: $secondaryColorMedium;
+
+							&:hover {
+								$color: darken($secondaryColorMedium, 20%);
+								@if is-dark-color($secondaryColorMedium) {
+									$color: lighten($secondaryColorMedium, 20%);
+								}
+								color: $color;
+							}
+						}
+			   	    }
+
+		        	color: black;
+				    box-sizing: border-box;
+				    overflow: hidden;
+
+					.v-textfield,
+					.v-textarea,
+					.v-filterselect,
+					.v-datefield,
+					.v-filterselect-input,
+					.v-datefield-textfield,
+					.v-datefield-button,
+					.v-horizontallayout {
+						display: block;
+						height: calc(100% + 1px) !important;
+					}
+					
+					.v-textfield[disabled],
+			    	.v-datefield input[disabled],
+					.v-filterselect input[disabled] {
+						color: #a3a3a3;
+					}
+
+					.v-filterselect button[disabled],
+					.v-datefield button[disabled] {
+						cursor: initial;
+						
+						&:before {
+							color: #a3a3a3;
+						}
+					}
+					
+					.v-nativebutton {
+						cursor: pointer;
+						background: transparent;
+    					border: 0;
+    					padding-left: ($v-unit-size / 2);
+    					padding-right: ($v-unit-size / 2);
+    					width: calc(100% + $v-unit-size);
+    					margin-left: -($v-unit-size / 2);
+    					display: block;
+    					height: 100%;
+    					text-align: left;
+    					color: $secondaryColorMedium;
+
+						&:hover {
+							$color: darken($secondaryColorMedium, 20%);
+							@if is-dark-color($secondaryColorMedium) {
+								$color: lighten($secondaryColorMedium, 20%);
+							}
+							color: $color;
+						}
+					}
+
+					.v-datefield,
+					.v-filterselect input {
+						margin-left: -($v-unit-size / 2);
+					    margin-right: -($v-unit-size / 2);
+					}
+
+					.v-textfield {
+					    width: calc(100% + $v-unit-size + 2px) !important;
+					}
+					
+					.v-textfield.v-datefield-textfield {
+					    width: calc(100% + $v-unit-size/2) !important;
+					}
+					
+					.v-filterselect {
+					    width: calc(100% + $v-unit-size) !important;
+						margin-left: -($v-unit-size / 2);
+					    margin-right: -($v-unit-size / 2);
+					    top: -1px;
+
+						.c-combobox-input {
+							height: calc(100% + 1px) !important;
+						}
+
+						.c-combobox-button {
+								background: transparent;
+								border-width: 0 1px;
+								border-right-color: transparent;
+								height: calc(100% + 1px) !important;
+						}
+					}
+
+					.v-datefield {
+					    width: calc(100% + $v-unit-size/2) !important;
+					}
+
+					.v-textfield,
+					.v-textarea,
+					.v-richtextarea {
+						@include valo-textfield-style($unit-size: $v-unit-size, $border-radius: 0, $border: none, $shadow: none, $padding: round($v-unit-size/9) round($v-unit-size/2));
+					}
+
+					.v-filterselect input {
+						@include valo-textfield-style($unit-size: $v-unit-size, $border-radius: 0, $border: none, $shadow: none, $padding: round($v-unit-size/9) round($v-unit-size * 1.5) round($v-unit-size/9) round($v-unit-size/2));
+					}
+
+					.v-datefield input {
+						@include valo-textfield-style($unit-size: $v-unit-size, $border-radius: 0, $border: none, $shadow: none, $padding: round($v-unit-size/9) round($v-unit-size/2) round($v-unit-size/9) round($v-unit-size * 1.5));
+					}
+
+					.v-textfield,
+					.v-textarea,
+					.v-filterselect input,
+					.v-datefield input,
+					.v-richtextarea {
+						background: transparent;
+						display: block;
+
+						&:focus {
+							box-shadow: none;
+						}
+					}
+
+				    .v-textfield-prompt,
+				    .v-textarea-prompt,
+				    .v-filterselect-prompt input,
+				    .v-datefield-prompt input {
+				      	@include valo-textfield-prompt-style;
+				    }
+
+				    .v-textarea,
+				    .v-richtextarea {
+				      	height: auto;
+				    }
+
+				    .v-filterselect [class$="button"],
+				    .v-datefield [class*="button"] {
+				    	top: 0px;
+				    }
+				    
+				    .v-checkbox {
+				    	height: 100%;
+					    width: 100%;
+					    display: inline-block;
+					    vertical-align: inherit;
+					    margin: auto;
+					    padding: initial;
+					    margin-left: -($v-unit-size / 2);
+					    margin-right: -($v-unit-size / 2);
+					    text-align: center;
+					    padding-left: ($v-unit-size / 2);
+					    padding-right: ($v-unit-size / 2);
+					    
+					    label:before,
+					    label:after {
+					    	position: relative;
+    						vertical-align: -webkit-baseline-middle;
+					    }
+					    
+					    label:after {
+					    	margin-left: -($v-unit-size / 2);
+					    }
+					    
+					    &.v-checkbox-disabled {
+					    	label {
+					    		cursor: initial;
+					    	}
+					    }
+					}
+		        }
+			}
+
+			.#{$primary-stylename}-footer {
+				color: white;
+			}
+		}
+
+    	.#{$primary-stylename}-header-deco {
+			max-height: 62px;
+		}
+		
+		&.bp-grid-header-double-line {
+			.v-grid-tablewrapper {
+	    		.#{$primary-stylename}-header {
+	    			.bp-grid-header-double-line {
+	    				.#{$primary-stylename}-cell {
+			    	   		height: 48px !important;
+			    	    	.v-grid-column-header-content {
+						    	bottom: 0px;
+			  						position: absolute;
+						    }
+						    
+						    &.bp-grid-header-break {
+						    	.v-grid-column-header-content {
+			  							white-space: normal;
+								    bottom: initial;
+								    position: inherit;
+								    line-height: 1.5;
+								    margin-top: 6px;
+						    	}
+			  				}
+						}
+	    			}
+				}
+			}
+			
+			/* workaround for having double line header column names */
+			&.header-count-1 {
+	    		.#{$primary-stylename}-body {
+	    			margin-top: 50px !important;
+	    		}
+	    	}
+	    	&.header-count-2 {
+	    		.#{$primary-stylename}-body {
+	    			margin-top: 80px !important;
+	    		}
+	    	}
+	    	&.header-count-3 {
+	    		.#{$primary-stylename}-body {
+	    			margin-top: 110px !important;
+	    		}
+	    	}
+	 	    &.header-count-4 {
+	    		.#{$primary-stylename}-body {
+	    			margin-top: 140px !important;
+	    		}
+	    	}
+		}
+		
+
+		&.#{$primary-stylename}-compact {
+
+    		$compact-height: round($v-unit-size * 4/5);
+
+	    	.#{$primary-stylename}-header {
+			    .#{$primary-stylename}-cell {
+			   	    line-height: $compact-height;
+				    height: $compact-height !important;
+
+				    .#{$primary-stylename}-column-header-content {
+				    	line-height: $compact-height;
+				    }
+		    	}
+
+		    	.bp-grid-filter-header {
+			        .#{$primary-stylename}-cell {
+						.v-textfield,
+						.v-textarea,
+						.v-filterselect,
+						.v-datefield,
+						.v-filterselect input,
+						.v-datefield-textfield,
+						.v-horizontallayout {
+							height: $compact-height;
+						}
+					}
+				}
+			}
+
+	    	.#{$primary-stylename}-body {
+		    	.#{$primary-stylename}-cell {
+			   	    line-height: $v-unit-size--tiny;
+				    height: $v-unit-size--tiny !important;
+		    	}
+			}
+
+		}
+
+		&.bp-grid-highlight-editable-columns {
+			.v-grid-tablewrapper {
+			    .#{$primary-stylename}-body {
+			    	.#{$primary-stylename}-row:not(.#{$primary-stylename}-row-selected) {
+				    	.#{$primary-stylename}-cell {
+							.v-textfield:not([disabled]),
+				    		.v-datefield input:not([disabled]),
+							.v-filterselect input:not([disabled]),
+							.v-checkbox:not(.v-checkbox-disabled) {
+								background: #eeece4;
+								border-radius: 0 !important;
+							}
+							
+							.v-checkbox {
+							    padding-top: 1px;
+							}
+						}
+				    	&.#{$primary-stylename}-row-stripe {
+					    	.#{$primary-stylename}-cell {
+								.v-textfield:not([disabled]),
+					    		.v-datefield input:not([disabled]),
+								.v-filterselect input:not([disabled]),
+								.v-checkbox:not(.v-checkbox-disabled) {
+									background: #e4e1d4;
+					    		}
+					    	}
+						}
+					}
+				}
+			}
+		}
+		
+		.v-datefield button.v-datefield-button {
+			z-index: 0;
+		}
+	}
+
+	.#{$primary-stylename}-sidebar.v-contextmenu.closed {
+		background-image: none;
+	}
+
+	.#{$primary-stylename}-sidebar.v-contextmenu .#{$primary-stylename}-sidebar-button,
+	.#{$primary-stylename}-sidebar.v-contextmenu.open .#{$primary-stylename}-sidebar-button {
+	    padding-left: 2px;
+    	width: 16px;
+    	color: #fff;
+	}
+
+	.#{$primary-stylename}-sidebar.v-contextmenu .#{$primary-stylename}-sidebar-button:after,
+	.#{$primary-stylename}-sidebar.v-contextmenu.open .#{$primary-stylename}-sidebar-button:after {
+		font-size: 14px;
+	}
+
+	.#{$primary-stylename}-sidebar.#{$primary-stylename}-sidebar-popup.v-contextmenu {
+	    border-radius: $v-border-radius;
+	    background-color: #fff;
+
+	    .#{$primary-stylename}-sidebar-content {
+		    padding: 4px 0;
+		}
+	}
+
+	.#{$primary-stylename}-scroller-vertical.#{$primary-stylename}-scroller::-webkit-scrollbar-thumb {
+	    background-color: rgba(0, 0, 0, 0.3);
+	}
+
+}

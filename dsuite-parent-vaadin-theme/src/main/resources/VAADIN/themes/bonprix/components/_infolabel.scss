@@ -1,0 +1,41 @@
+@mixin bp-infolabel($primary-stylename: information-label) {
+    .#{$primary-stylename} {
+        border: 1px solid #fff;
+        padding: 5px;
+    }
+    .information-label-info .v-icon, 
+    .information-label-warning .v-icon,
+    .information-label-error .v-icon {
+        margin: 5px;
+        margin-right: 10px;
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .information-label-info {
+        @extend .information-label;
+        border-color: $mainColorDark;
+        background-color: $mainColorLight;
+        
+        .v-icon {
+        	color: $mainColorDark;
+        }
+    }
+    .information-label-warning {
+        @extend .information-label;
+        border-color: rgb(255, 200, 0);
+        background-color: #FFFFB2;
+        
+        .v-icon {
+        	color: rgb(255, 200, 0);
+        }
+    }
+    .information-label-error {
+        @extend .information-label;
+        border-color: rgb(220, 0, 0);
+        background-color: #FFCCCC;
+        
+        .v-icon {
+        	color: rgb(220, 0, 0);
+        }
+    }
+}

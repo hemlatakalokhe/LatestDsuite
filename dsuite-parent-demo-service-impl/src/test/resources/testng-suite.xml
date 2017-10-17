@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite" >
+	<test name="Unit Test" verbose="2">
+		<groups>
+			<run>
+				<include name="UNITTEST"/>
+			</run>
+		</groups>
+		<packages>
+			<package name="de.bonprix.docker.*"/>
+		</packages>
+	</test>
+	<test name="Integration Test" verbose="2">
+		<groups>
+			<run>
+				<include name="INTEGRATIONTEST"/>
+			</run>
+		</groups>
+		<packages>
+			<package name="de.bonprix.docker.*"/>
+		</packages>
+	</test>
+</suite>

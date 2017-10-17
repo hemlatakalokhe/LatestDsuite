@@ -1,0 +1,135 @@
+@mixin bp-window($primary-stylename: v-window) {
+
+	.#{$primary-stylename} {
+		background: white;	
+
+		.#{$primary-stylename}-closebox,
+		.#{$primary-stylename}-maximizebox,
+		.#{$primary-stylename}-restorebox {
+			background: none;
+		}
+		.#{$primary-stylename}-header {
+			color: white;
+		}
+		.#{$primary-stylename}-contents {
+			padding-top: 0px !important;
+			
+			> .v-scrollable {
+	    		&:before {
+	    			border-top: none;						    	
+				}
+	    	}
+		}
+		.#{$primary-stylename}-outerheader {
+			&:after {
+	    		border-top: none;						    	
+			}
+		}
+	}
+	
+	.#{$primary-stylename}.bp-message-box {
+			
+		.v-vertical {	    
+		    .v-label-undef-w {
+			    max-width: round($v-unit-size * 10);
+			    white-space: normal;
+			}
+		}
+	}
+
+	.#{$primary-stylename}.bp-dialog {		
+		.#{$primary-stylename}-contents > div > .v-vertical {
+		    padding-bottom: round($v-unit-size / 2);
+	    }
+	    
+	    .v-panel-caption {
+	    	background-image: none;
+	    }
+	    
+	    .bp-dialog-headline {
+		    		font-family: HelveticaLT, Helvetica, Arial, arial, sans-serif;
+		    		font-size: 20px;
+		    		color: $mainColorDark;
+	    		}
+	    		
+	    		.bp-dialog-panel-white{
+	    			background-color: white !important;
+	    			box-shadow: none;
+	    		}
+	    		
+	    .bp-dialog-subline {
+	     			white-space : normal;
+ 					word-wrap : break-word;
+	    }
+	    
+	    .bp-dialog-button-bar {
+	    	padding-left: round($v-unit-size / 2);
+	    	padding-right: round($v-unit-size / 2);
+	    }
+	    		
+    }
+	    
+	.#{$primary-stylename}.bp-status-wizard {
+	
+		&.bp-dialog .#{$primary-stylename}-contents > div > .v-vertical {
+		    padding-bottom: 0;
+	    }
+        .bp-status-wizard-main {
+    		padding: 0;
+ 	
+	    	.pb-status-wizard-left-layout {
+			    background: $secondaryColorUltraLight;
+			    
+			    .v-label-bp-status-wizard-label-header {
+		    		font-family: HelveticaLT, Helvetica, Arial, arial, sans-serif;
+		    		font-size: 20px;
+		    		color: $mainColorDark;
+		    		padding-left: 10px;
+	    		}
+			    
+			    .v-vertical {
+					.v-button {
+						border: 0;
+		    			background: none;
+		    			box-shadow: none;
+		    			padding: 0px;
+		    			color: black;
+		   			    text-align: left;
+		   				height: auto;
+		   				margin-top: 7px;
+		   			    
+		   			    .v-button-wrap {
+		   			    	white-space: normal;
+		   			    }
+		    			
+		    			&.v-button-selected {
+			    			color: $mainColorDark;
+			    		}	
+			    		
+			    		&:active {
+			    			box-shadow: none;
+			    		}
+			    		
+			    		&:after {
+			    			box-shadow: none;
+						    top: 0px;
+						    right: 0px;
+						    bottom: 0px;
+						    left: 0px;		    		
+			    		}
+					}
+				}
+		    }
+		    
+	    	.bp-status-wizard-right-layout{
+			    padding-bottom: 15px;
+			    
+			    .v-label-bp-status-wizard-label-header {
+		    		font-family: HelveticaLT, Helvetica, Arial, arial, sans-serif;
+		    		font-size: 20px;
+		    		color: $mainColorDark;
+	    		}
+		    }
+   	    }
+    }
+}

@@ -1,0 +1,58 @@
+@mixin bp-componentbar($primary-stylename: bp-componentbar, $secondary-stylename: v-menubar) {
+	
+	.#{$primary-stylename}--menu {
+		padding: $v-unit-size  0  0  $v-unit-size;
+	}
+	
+	.v-slot-#{$primary-stylename} {
+		.#{$primary-stylename}.#{$secondary-stylename} {	 		
+	  		background: initial;
+	  		box-shadow: initial;
+	  		border: 0;
+		    height: initial;
+		    line-height: initial;
+	  
+		  	> .#{$secondary-stylename}-menuitem {
+				padding: 0;
+				border: 0;
+			    margin-right: $v-unit-size;
+			    font-size: $bp-font-size-caption;
+			    color: $mainColorDark;
+		    }
+		    > .#{$secondary-stylename}-menuitem-selected {
+				background: initial;
+				text-shadow: initial;
+				box-shadow: initial;
+				color: $secondaryColorMedium;
+		    }
+		    
+		    > .#{$secondary-stylename}-menuitem-icon-only {
+				font-size: $bp-font-size-icon;
+		    }
+		    
+		    &:focus:after {
+				box-shadow: initial;
+		  	}
+	  	}
+	  	
+	  	&.v-slot-#{$primary-stylename}--component {
+	  		> .v-widget {
+		  		margin-right: $v-unit-size;
+		  		margin-top: -3px;
+		  	}
+		  	
+		  	> .v-checkbox {
+		  		vertical-align: middle;
+		  	}
+		  	
+		  	.v-has-caption {
+		  		.v-caption-#{$primary-stylename}--component {
+			    	display: inline-block;
+			   	 	vertical-align: sub;
+			    	margin-right: 7px;
+			    }
+		  	}
+	  	}
+	}  	
+  
+}

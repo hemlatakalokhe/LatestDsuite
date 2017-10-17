@@ -1,0 +1,15 @@
+@mixin bp-defaultview($primary-stylename: bp-defaultview) {
+	
+	.#{$primary-stylename} {
+		.logo-caption {
+        	font-size: 150px;
+	        color: gray;
+	        padding-left: 20px;
+	        font-family: "HelveticaTH";
+	    }	
+	    .logo {
+	    	height: 100%;
+	    }
+	}
+      
+}

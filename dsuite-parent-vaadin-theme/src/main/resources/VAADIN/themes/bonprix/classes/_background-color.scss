@@ -1,0 +1,72 @@
+@mixin bp-background-color($primary-stylename: bp-background-color) {
+		
+	/* main colors */
+	.#{$primary-stylename}--main-color-dark {
+		background: $mainColorDark;
+	}  
+	
+	.#{$primary-stylename}--main-color-medium {
+		background: $mainColorMedium;
+	} 
+	
+	.#{$primary-stylename}--main-color-light {
+		background: $mainColorLight;
+	} 
+	
+	.#{$primary-stylename}--main-color-ultra-light {
+		background: $mainColorUltraLight;
+	} 
+	
+	/* gray colors */
+	.#{$primary-stylename}--gray-color-ultra-dark {
+		background: $grayColorUltraDark;
+	}
+	
+	.#{$primary-stylename}--gray-color-dark {
+		background: $grayColorDark;
+	}
+	
+	.#{$primary-stylename}--gray-color-medium {
+		background: $grayColorMedium;
+	}
+	
+	.#{$primary-stylename}--gray-color-light {
+		background: $grayColorLight;
+	}
+	
+	.#{$primary-stylename}--gray-color-ultra-light {
+		background: $grayColorUltraLight;
+	}
+	
+	/* special colors */
+	.#{$primary-stylename}--special-color-green {
+		background: $specialColorGreen;
+	}
+	
+	.#{$primary-stylename}--special-color-yellow {
+		background: $specialColorYellow;
+	}
+	
+	.#{$primary-stylename}--special-color-red {
+		background: $specialColorRed;
+	}
+
+    /* Following colors can be overridden in child themes */
+  	/* secondary colors */
+  	.#{$primary-stylename}--secondary-color-dark {
+		background: $secondaryColorDark;
+	}
+	
+	.#{$primary-stylename}--secondary-color-medium {
+		background: $secondaryColorMedium;
+	}
+	
+	.#{$primary-stylename}--secondary-color-light {
+		background: $secondaryColorLight;
+	}
+	
+	.#{$primary-stylename}--secondary-color-ultra-light {
+		background: $secondaryColorUltraLight;
+	}
+	
+}

@@ -1,0 +1,12 @@
+@import "background-color";
+@import "caption";
+
+/**
+ * Outputs all the selectors and properties for all individual components to produce
+ * the variation specified by global variables.
+ */
+@mixin bp-classes {
+	/* TODO: mixin for all colors */
+    @include bp-background-color;
+    @include bp-caption;
+}

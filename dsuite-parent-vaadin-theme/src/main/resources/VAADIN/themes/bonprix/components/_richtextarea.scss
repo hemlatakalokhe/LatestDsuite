@@ -1,0 +1,12 @@
+@mixin bp-richtextarea($primary-stylename: v-richtextarea) {
+
+	.#{$primary-stylename} {
+		background-image: linear-gradient(to bottom,white 2%, $secondaryColorLight 98%);
+		
+		.gwt-RichTextToolbar {
+			.gwt-RichTextToolbar-top {
+			    color: $secondaryColorMedium;	
+			} 
+		}
+	}
+}

@@ -1,0 +1,32 @@
+@mixin bp-caption($primary-stylename: v-caption) {
+	
+	.#{$primary-stylename}.#{$primary-stylename}-bp-caption-primary {
+	    font-size: $bp-font-size-caption;
+		font-weight: $bp-font-weight-caption;
+		color: $bp-font-color-caption;
+		line-height: 29px;
+	    display: block;
+	    padding-bottom: 0;
+	    
+	    .#{$primary-stylename}-text {
+    	    display: inline;
+	    }
+	}  
+
+	.v-vertical.bp-caption-primary,
+	.v-horizontal.bp-caption-primary {
+		.#{$primary-stylename} {
+			font-size: $bp-font-size-caption;
+			font-weight: $bp-font-weight-caption;
+			color: $bp-font-color-caption;
+			line-height: 29px;
+		    display: block;
+		    padding-bottom: 0;
+			
+			.#{$primary-stylename}-text {
+	    	    display: inline;
+		    }
+		}
+	}
+	
+}

@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>de.bonprix.base</groupId>
+    <artifactId>dsuite-parent</artifactId>
+    <version>1.3-SNAPSHOT</version>
+  </parent>
+  <artifactId>dsuite-parent-vaadin-widgetset</artifactId>
+  
+  <name>dsuite-parent-vaadin-widgetset</name>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<oracle.systemPath>${user.home}/Oracle/driver/ojdbc6.jar</oracle.systemPath>
+		<vaadin-sass-compiler.version>0.9.12</vaadin-sass-compiler.version>
+		<vaadin-charts.version>1.1.7</vaadin-charts.version>
+	</properties>
+ 
+  <dependencies>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-client</artifactId>
+			<version>${vaadin.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-server</artifactId>
+			<version>${vaadin.version}</version>
+		</dependency>
+		<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-client-compiler</artifactId>
+				<version>${vaadin.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+		<!-- BEGIN bonprix vaadin addons -->
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-scrollable-panel</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-sliderpanel</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-combobox-multiselect</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-textfield-multiline</artifactId>
+			<version>0.0.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-collapsible-panel</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.vaadin.grid.enhancements</groupId>
+			<artifactId>GridEnhancements</artifactId>
+			<version>1.3.6-bp</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>sizereporter</artifactId>
+		   <version>0.1.4</version>
+		</dependency>
+		<!-- END bonprix vaadin addons -->
+		<!-- BEGIN vaadin addons -->
+		<dependency>
+		   <groupId>com.vaadin.addon</groupId>
+		   <artifactId>vaadin-context-menu</artifactId>
+		   <version>0.7.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>resetbutton-for-listselect</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>ratingstars</artifactId>
+		   <version>2.1</version>
+		</dependency>
+		<!-- lazy load component for images -->
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-lazyload</artifactId>
+			<version>1.0.16</version> 
+		</dependency>
+		<!-- tokenfilter component -->
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-tokenfilter</artifactId>
+			<version>1.1.18</version>
+		</dependency>
+		<!-- Html2Canvas Screenshot component -->
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>screenshot</artifactId>
+		   <version>1.4.1.2</version>
+		</dependency>
+		<!-- simple filedownloader component -->
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>simplefiledownloader</artifactId>
+		   <version>1.0.4</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.vaadin.addon</groupId>
+   			<artifactId>easyuploads</artifactId>
+   			<version>7.4.10</version>
+		</dependency>	
+		<!-- idle/ information befor session timeout -->
+		<dependency>
+		   <groupId>org.vaadin.addon</groupId>
+		   <artifactId>idle</artifactId>
+		   <version>1.1.0</version>
+		</dependency>
+		<!-- countdownclock -->
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>countdownclock</artifactId>
+		   <version>2.0.1</version>
+		</dependency>	
+		<!-- bonprix magnifier addon -->
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>magnifier</artifactId>
+		   <version>1.0</version>
+		</dependency>
+		<!-- AutocompleteTextField Add-on -->
+		<dependency>
+		   <groupId>eu.maxschuster</groupId>
+		   <artifactId>vaadin-autocompletetextfield</artifactId>
+		   <version>1.0-alpha-4</version>
+		</dependency>
+		<!-- END vaadin addons -->
+	</dependencies>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.5.1</version>
+          <configuration>
+            <!-- put your configurations here -->
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

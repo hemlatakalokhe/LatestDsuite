@@ -1,0 +1,45 @@
+@mixin bp-button($primary-stylename: v-button) {
+	
+	.#{$primary-stylename}:not([class*="v-button-"]) {
+		background: #fff;
+	    border-color: $secondaryColorLight;
+	    color: $secondaryColorMedium;
+        box-shadow: none;	
+	}  
+
+	.#{$primary-stylename}-icon-only {
+		@include valo-button-borderless-style($font-color: $v-selection-color);
+	 	.v-icon {
+			font-size: $bp-font-size-icon;
+			color: $secondaryColorMedium;
+		}
+		
+		&:hover,
+		&:focus {
+			.v-icon {
+				$color: darken($secondaryColorMedium, 20%);
+				@if is-dark-color($secondaryColorMedium) {
+					$color: lighten($secondaryColorMedium, 20%);
+				}
+				color: $color;
+			}
+		}
+	}
+	
+	.#{$primary-stylename}.#{$primary-stylename}-icon-only:focus:after {
+	    box-shadow: none;
+	}
+}
+
+@mixin valo-button-hover-style($background-color: $v-background-color) { 
+	@if $background-color == #fff {
+		$bg: $secondaryColorMedium;
+	}
+	@else {
+		$bg: darken($background-color, 90%);
+		@if is-dark-color($background-color) {
+			$bg: lighten($background-color, 90%);
+		}
+	}
+	background-color: rgba($bg, 0.12);
+}

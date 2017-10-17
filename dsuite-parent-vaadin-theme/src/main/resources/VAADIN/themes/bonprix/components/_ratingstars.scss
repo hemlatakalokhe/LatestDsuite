@@ -1,0 +1,58 @@
+@mixin bp-ratingstars($primary-stylename: v-ratingstars) {
+	
+	.#{$primary-stylename}-wrapper {
+		background: transparent;
+    	border: 0;
+    	border-radius: 0;
+    	float: none;    	
+		
+		.#{$primary-stylename} {
+			background: $secondaryColorLight;
+		
+			.#{$primary-stylename}-star {
+				background: none;
+				
+				&:before {
+				    content: "\f17c";
+				    font-family: "FontBonprix";
+				    font-size: 20px;
+				    color: #fff;
+				    display: block;
+				    margin-top: -5px;
+				}
+			}
+			
+			.#{$primary-stylename}-bar {
+				$color: $secondaryColorMedium;
+				background: $color;
+				border-right-color: $color;
+			}
+		} 
+		
+		&.tiny {		
+			.#{$primary-stylename}-star {			
+				&:before {
+				    font-size: 13px;
+    				margin-top: -3px;
+				}
+			}
+		}
+		
+		&.bp-ratingstars--inverted {
+			.#{$primary-stylename} { 
+				background: #fff;
+				
+				.#{$primary-stylename}-star:before {
+				    color: $secondaryColorUltraLight;
+				}
+				
+				.#{$primary-stylename}-bar {
+					$color: $secondaryColorMedium;
+					background: $color;
+					border-right-color: $color;
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,28 @@
+/**
+ *
+ *
+ * @param {string} $primary-stylename (bp-buttonbar) - 
+ *
+ * @group buttonbar
+ */
+@mixin bp-buttonbar ($primary-stylename: bp-buttonbar) {
+
+  .#{$primary-stylename} {
+  
+  	> .v-slot { 
+	  
+	  	> .v-button {
+	  		@include valo-button-borderless-style($font-color: $secondaryColorDark);
+			padding: 0;
+		    margin-right: $v-unit-size;
+		    font-size: $bp-font-size-caption;
+	    }
+	    
+	    > .v-button:hover {
+	    	color: $secondaryColorMedium;
+	    }
+	    
+	}
+  }
+  
+}

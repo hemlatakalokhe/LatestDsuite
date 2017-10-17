@@ -1,0 +1,7 @@
+@mixin bp-datefield($primary-stylename: v-datefield) {
+
+	.#{$primary-stylename} {
+		height: $bp-input-height;
+	}
+
+}

@@ -1,0 +1,49 @@
+@mixin bp-filterselect($primary-stylename: v-filterselect) {
+
+	.#{$primary-stylename} {
+		height: $bp-input-height;
+	}
+	
+	.#{$primary-stylename}-suggestpopup {
+		.gwt-MenuItem {
+			height: inherit;
+			
+			&:not(.gwt-MenuItem-selected) {
+				background: white;
+			}
+		}
+		
+		.c-combo-popup-prevpage,
+		.c-combo-popup-nextpage {
+			font-family: ThemeIcons;
+		}
+		
+		.align-center {
+			display: block;
+			text-align: center;
+		}
+		
+		&.#{$primary-stylename}-suggestpopup-column {
+			margin-top: 0px !important;
+			z-index: 10010 !important;
+			
+			.#{$primary-stylename}-suggestmenu {
+				border-top-left-radius: 0px;
+    			border-top-right-radius: 0px;
+    			
+    			.gwt-MenuItem {
+    				.gwt-CheckBox input {
+    					vertical-align: middle;
+	    			}
+	    			
+	    			span:not(.gwt-CheckBox) {
+	    			    vertical-align: middle;
+	    			}
+    			}
+			}
+		}
+	}
+	
+	
+
+}
