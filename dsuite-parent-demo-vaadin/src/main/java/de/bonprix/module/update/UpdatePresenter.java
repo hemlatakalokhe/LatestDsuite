@@ -1,6 +1,7 @@
 package de.bonprix.module.update;
 
 import javax.annotation.Resource;
+
 import de.bonprix.base.demo.dto.Country;
 import de.bonprix.base.demo.dto.Style;
 import de.bonprix.base.demo.service.CountryService;
@@ -24,15 +25,17 @@ public class UpdatePresenter extends AbstractMvpViewPresenter<UpdateView> implem
     @Resource
     private CountryService country;
     @Resource
-    private UiNavigationProvider navigationProvider;
+    private transient UiNavigationProvider navigationProvider;
     private static Long id;
 
     @Override
     public void init() {
+        //
     }
 
     @Override
     public void onViewEnter() {
+        //
 
     }
 

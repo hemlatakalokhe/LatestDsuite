@@ -42,7 +42,7 @@ public class ShowCaseViewImpl extends AbstractMvpView<ShowCasePresenter> impleme
     private ApplicationContext applicationContext;
 
     @PostConstruct
-    public void init() {
+    public void initialize() {
         final List<ShowcaseWrapper> showcaseWrappers = getShowcaseWrappers();
 
         final Tree showcaseTree = getShowCaseTree(showcaseWrappers);

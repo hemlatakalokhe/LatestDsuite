@@ -2,7 +2,9 @@ package de.bonprix.module.style.wizard.mvp;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+
 import com.vaadin.ui.Notification;
+
 import de.bonprix.base.demo.dto.Style;
 import de.bonprix.base.demo.service.ClientService;
 import de.bonprix.base.demo.service.CountryService;
@@ -35,7 +37,7 @@ public class AddStyleMvpWizardPresenter extends AbstractMvpWizardPresenter<AddSt
     @Resource
     private EventBus localEventBus;
 
-    public StyleWizardPojo styleWizardPojo;
+    private StyleWizardPojo styleWizardPojo;
 
     @PostConstruct
     public void initialize() {
@@ -52,8 +54,8 @@ public class AddStyleMvpWizardPresenter extends AbstractMvpWizardPresenter<AddSt
         initializeData();
         addWizardStep(new AddStyleWizardStepOne(this.styleWizardPojo, step -> Notification.show("Step One"),
                 step -> saveStyle(((AddStyleWizardStepOne) step).getStyleData())));
-        addWizardStep(new AddStyleWizardTwo(this.styleWizardPojo, steo -> {
-        }, step -> {
+        addWizardStep(new AddStyleWizardTwo(this.styleWizardPojo, steo -> {//
+        }, step -> {//
         }));
         addWizardStep(new AddStyleWizardStepThree(this.styleWizardPojo, step -> Notification.show("Step Two"), step -> Notification.show("Step Three")));
     }

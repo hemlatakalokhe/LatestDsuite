@@ -9,10 +9,12 @@ public class LazyLoadingImagePresenter extends AbstractMvpViewPresenter<LazyLoad
 
     @Override
     public void init() {
+        //
     }
 
     @Override
     public void onViewEnter() {
+        //
     }
 
     @Override

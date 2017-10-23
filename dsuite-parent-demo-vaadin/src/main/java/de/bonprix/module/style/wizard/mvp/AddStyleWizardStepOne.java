@@ -27,7 +27,6 @@ public class AddStyleWizardStepOne extends AbstractWizardStep {
     private BeanItemComboBox<Country> countryComboBox;
     private BeanItemComboBox<Client> clientComboBox;
     private BeanItemComboBox<Season> seasonComboBox;
-    @SuppressWarnings("unused")
     private final StyleWizardPojo styleWizardPojo;
 
     @SuppressWarnings("unchecked")

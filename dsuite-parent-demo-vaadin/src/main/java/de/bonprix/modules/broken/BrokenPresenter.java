@@ -10,16 +10,16 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 @SpringPresenter
 public class BrokenPresenter extends AbstractMvpViewPresenter<BrokenViewImpl> implements BrokenView.Presenter {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(BrokenPresenter.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BrokenPresenter.class);
 
-	@Override
-	public void init() {
-		// init
-	}
+    @Override
+    public void init() {
+        //
+    }
 
-	@Override
-	public void onViewEnter() {
-		throw new BrokenViewExeption("blub");
-	}
+    @Override
+    public void onViewEnter() {
+        throw new BrokenViewExeption("blub");
+    }
 
 }

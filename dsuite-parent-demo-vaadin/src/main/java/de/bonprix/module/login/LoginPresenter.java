@@ -48,10 +48,12 @@ public class LoginPresenter extends AbstractMvpViewPresenter<LoginViewImpl> impl
 
     @Override
     public void init() {
+        //
     }
 
     @Override
     public void onViewEnter() {
+        //
     }
 
     @Override

@@ -2,7 +2,9 @@ package de.bonprix.module.magnifier;
 
 import java.util.Arrays;
 import java.util.List;
+
 import org.vaadin.addons.magnifier.Magnifier;
+
 import com.vaadin.server.ExternalResource;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Alignment;
@@ -10,6 +12,7 @@ import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.VerticalLayout;
+
 import de.bonprix.VaadinUI;
 import de.bonprix.model.CustomMagnifierImageUrl;
 import de.bonprix.vaadin.fluentui.FluentUI;
@@ -32,6 +35,7 @@ public class MagnifierViewImpl extends AbstractMvpView<MagnifierPresenter> imple
                 new CustomMagnifierImageUrl("http://www.petmd.com/sites/default/files/4-meow-conversational-cat.gif"));
 
     public MagnifierViewImpl() {
+        //
     }
 
     @Override
@@ -50,12 +54,10 @@ public class MagnifierViewImpl extends AbstractMvpView<MagnifierPresenter> imple
 
         for (final CustomMagnifierImageUrl imageUrl : MagnifierViewImpl.IMAGE_URLS) {
             image = new Image(null, new ExternalResource(imageUrl.getImageUrl()));
-            System.out.println("URL of image: " + imageUrl.getImageUrl()
-                .toString());
             image.setImmediate(true);
             image.setHeight(200, Unit.PIXELS);
             image.setWidth(200, Unit.PIXELS);
-            image.addClickListener((event) -> {
+            image.addClickListener(event -> {
                 magnifier.setImageUrl(imageUrl.getImageUrl());
                 magnifier.setZoomImageUrl(imageUrl.getImageZoomUrl());
             });

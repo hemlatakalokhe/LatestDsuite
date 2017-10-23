@@ -42,6 +42,7 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
      * 
      */
     private static final long serialVersionUID = 3394519511246640382L;
+    @SuppressWarnings("unused")
     private LazyLoadManager lazyLoadManager;
     private CssLayout box;
     private String assetName;
@@ -49,6 +50,7 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
     private static final String BP_LAZYIMAGE_CONTAINER_FRAME_RED = "bp-lazyimage-container-frame-red";
     private static final String BP_LAZYIMAGE_CONTAINER_FRAME_GREEN = "bp-lazyimage-container-frame-green";
     private static final String BP_LAZYIMAGE_CONTAINER_FRAME_YELLOW = "bp-lazyimage-container-frame-yellow";
+    @SuppressWarnings("unused")
     private static final String BP_CHECK_BUTTON_NAME = "overlay-button-2";
     private static final int LENGTH_OF_ASSET_NAME = 12;
     private static final double DEFAULT_SLIDER_VALUE = 300.0;
@@ -99,9 +101,6 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
         tooltipCheckBox.addValueChangeListener(event -> refreshImages(tooltipCheckBox.getValue(), selectableCheckBox.getValue(), iconButtonsCheckBox.getValue(),
                                                                       starsAndNameCheckBox.getValue(), lazyImageFrameColoredCheckBox.getValue(),
                                                                       (int) numberOfButtons.getValue(), selectDeselectComboBox.getValue()));
-        // selectableCheckBox.addValueChangeListener(event -> refreshImages(tooltipCheckBox.getValue(), selectableCheckBox.getValue(),
-        // iconButtonsCheckBox.getValue(), starsAndNameCheckBox.getValue(),
-        // lazyImageFrameColoredCheckBox.getValue(), (int) numberOfButtons.getValue()));
 
         iconButtonsCheckBox.addValueChangeListener(event -> {
             if (!iconButtonsCheckBox.getValue()) {
@@ -159,12 +158,13 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
             .get();
     }
 
+    @SuppressWarnings("unchecked")
     private void refreshImages(final Boolean showTooltip, final Boolean selectable, final Boolean iconButtonsCheckBox, final Boolean starsAndNameCheckBox,
             final Boolean lazyImageFrameColoredCheckBox, final int selectedNumberOfButtons, final Object selectDeselectComboBox) {
 
-        int imageCounter = 0;
         this.box.removeAllComponents();
 
+        @SuppressWarnings("rawtypes")
         final List iconUrlList = new ArrayList<>();
         iconUrlList.add("https://digistyle.bonprix.net/design/icons/png/32/zoom-in_white_32.png");
         iconUrlList.add("https://digistyle.bonprix.net/design/icons/png/32/ok_white_32.png");
@@ -181,9 +181,6 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
             final Label label = new Label(this.assetName);
 
             final LazyImage lazyImage = new LazyImage().withImageUrl(assetUrl);
-
-            // if you want to react on the event, implement this code
-            // lazyImage.addSelectListener(event -> System.out.println("--------------------------- Asset selected? " + event.isSelected()));
 
             lazyImage.addMouseDownListener(event -> {
                 if (iconButtonsCheckBox) {
@@ -224,8 +221,6 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
                     lazyImage.setSelected(false);
                 }
             }
-
-            imageCounter++;
         }
     }
 
@@ -290,6 +285,7 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
 
     @Override
     public void checkCheckBox(final NavigationRequest request) {
+        //
     }
 
     @Override

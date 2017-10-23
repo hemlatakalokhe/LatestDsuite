@@ -38,7 +38,7 @@ public class UpdateMvpDialogViewImpl extends AbstractMvpDialogView<UpdateMvpDial
 
     private static final long serialVersionUID = 8409832419813379861L;
     @Resource
-    private UiNotificationProvider notificationProvider;
+    private transient UiNotificationProvider notificationProvider;
     private TextField desc;
     private BeanItemComboBox<Country> countryComboBox;
     private BeanItemComboBox<Client> clientComboBox;

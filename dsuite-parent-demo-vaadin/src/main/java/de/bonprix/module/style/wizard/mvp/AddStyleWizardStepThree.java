@@ -25,7 +25,6 @@ public class AddStyleWizardStepThree extends AbstractWizardStep {
     protected static final String DESCRIPTION = "desc";
     protected static final String DATE = "date";
 
-    @SuppressWarnings("unused")
     private final StyleWizardPojo styleWizardPojo;
 
     @SuppressWarnings("unchecked")

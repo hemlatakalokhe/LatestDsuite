@@ -1,6 +1,7 @@
 package de.bonprix.module.login.ui;
 
 import javax.annotation.Resource;
+
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
@@ -33,42 +34,40 @@ public class LoginViewImpl extends AbstractMvpView<LoginPresenter> implements Lo
 
     private CheckBox checkBox;
 
-    private PasswordField password;
-
-    private TextField username;
-
     @Resource
-    private UiNotificationProvider notificatonProvider;
-
-    private Button register;
+    private transient UiNotificationProvider notificatonProvider;
 
     @Override
     protected void initializeUI() {
+        final PasswordField password;
+
+        final TextField username;
+
+        Button register;
+
         this.checkBox = new CheckBox("SHOW_INTERCEPTOR_DIALOG");
-        this.username = FluentUI.textField()
+        username = FluentUI.textField()
             .caption("User Name")
             .required(true)
             .get();
-        this.password = FluentUI.passwordField()
+        password = FluentUI.passwordField()
             .caption("Password")
             .required(true)
             .get();
-        this.register = FluentUI.button()
+        register = FluentUI.button()
             .caption("Register")
             .get();
         final Button saveButton = FluentUI.button()
             .captionKey("Login")
-            .onClick(e -> {
-                getPresenter().authorizingUser(this.username.getValue(), this.password.getValue());
-            })
+            .onClick(e -> getPresenter().authorizingUser(username.getValue(), password.getValue()))
             .style(ValoTheme.BUTTON_PRIMARY)
             .get();
-        this.register.addClickListener(event -> getPresenter().openRegisterDialog());
+        register.addClickListener(event -> getPresenter().openRegisterDialog());
 
         setCompositionRoot(FluentUI.vertical()
             .add(FluentUI.form()
-                .add(this.username, this.password, FluentUI.horizontal()
-                    .add(saveButton, this.register)
+                .add(username, password, FluentUI.horizontal()
+                    .add(saveButton, register)
                     .spacing()
                     .get())
                 .spacing(true)
@@ -84,6 +83,7 @@ public class LoginViewImpl extends AbstractMvpView<LoginPresenter> implements Lo
 
     @Override
     public void showNotification(final String message) {
+        //
     }
 
 }

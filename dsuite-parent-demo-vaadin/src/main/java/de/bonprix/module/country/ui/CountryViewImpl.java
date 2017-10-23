@@ -1,8 +1,10 @@
 package de.bonprix.module.country.ui;
 
 import java.util.List;
+
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.CheckBox;
+
 import de.bonprix.VaadinUI;
 import de.bonprix.base.demo.dto.Country;
 import de.bonprix.base.demo.dto.Planperiod;
@@ -51,13 +53,12 @@ public class CountryViewImpl extends AbstractMvpView<CountryPresenter> implement
 
     @Override
     public void setAllBeans(final List<Planperiod> beans) {
-        // TODO Auto-generated method stub
-
+        //
     }
 
     @Override
     public void setAllStyleBeans(final List<Style> beans) {
-        // this.styleGrid.addAllBeans(beans);
+        //
     }
 
     @Override

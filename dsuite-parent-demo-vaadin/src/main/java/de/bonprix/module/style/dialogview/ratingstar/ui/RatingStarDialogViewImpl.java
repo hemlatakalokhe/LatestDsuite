@@ -20,40 +20,44 @@ import de.bonprix.vaadin.mvp.dialog.AbstractMvpDialogView;
 import de.bonprix.vaadin.provider.UiNavigationProvider;
 import de.bonprix.vaadin.provider.UiNotificationProvider;
 
+@SuppressWarnings("serial")
 @SpringViewComponent
-public class RatingStarDialogViewImpl extends AbstractMvpDialogView<RatingStarDialogPresenter>
-implements RatingStarDialogView<RatingStarDialogPresenter>{
+public class RatingStarDialogViewImpl extends AbstractMvpDialogView<RatingStarDialogPresenter> implements RatingStarDialogView<RatingStarDialogPresenter> {
 
     @Resource
-    private UiNotificationProvider notificationProvider;
+    private transient UiNotificationProvider notificationProvider;
 
     @Resource
-    private UiNavigationProvider navigationProvider;
+    private transient UiNavigationProvider navigationProvider;
 
     private RatingStars ratingStarsDefault;
 
     public RatingStarDialogViewImpl() {
-        super(new DialogConfigurationBuilder()
-              .withButton(DialogButton.CANCEL)
-              .withPrimaryButton(DialogButton.OK)
-              .withCloseOnButton(DialogButton.OK)
-              .withCloseOnButton(DialogButton.CANCEL)
-              .withHeadline("RATE_US")
-              .withWidth(500)
-              .withHeight(500).build());
+        super(new DialogConfigurationBuilder().withButton(DialogButton.CANCEL)
+            .withPrimaryButton(DialogButton.OK)
+            .withCloseOnButton(DialogButton.OK)
+            .withCloseOnButton(DialogButton.CANCEL)
+            .withHeadline("RATE_US")
+            .withWidth(500)
+            .withHeight(500)
+            .build());
 
-        addButtonListener(DialogButton.OK,event->{
+        addButtonListener(DialogButton.OK, event -> {
             this.ratingStarsDefault.addValueChangeListener((ValueChangeListener) ValueChangeEvent -> this.notificationProvider
-                                                           .showInfoNotification("You voted " + ValueChangeEvent.getProperty()
-                                                           .getValue() + " stars!"));
+                .showInfoNotification("You voted " + ValueChangeEvent.getProperty()
+                    .getValue() + " stars!"));
             this.navigationProvider.navigateTo(LoginViewImpl.VIEW_NAME);
         });
     }
 
     @Override
     protected Component layout() {
-        final VerticalLayout starLayout=FluentUI.vertical().add(getRatingStars3()).get();
-        final VerticalLayout layout=FluentUI.vertical().add(starLayout).get();
+        final VerticalLayout starLayout = FluentUI.vertical()
+            .add(getRatingStars3())
+            .get();
+        final VerticalLayout layout = FluentUI.vertical()
+            .add(starLayout)
+            .get();
         layout.setComponentAlignment(starLayout, Alignment.MIDDLE_CENTER);
         return layout;
     }

@@ -33,6 +33,7 @@ import de.bonprix.vaadin.theme.DSuiteTheme;
 @SuppressWarnings("serial")
 @SpringViewComponent
 public class LazyLoadingDemo extends ShowcaseWrapper {
+    @SuppressWarnings("unused")
     private LazyLoadManager lazyLoadManager;
     private CssLayout box;
     private String assetName;
@@ -150,7 +151,7 @@ public class LazyLoadingDemo extends ShowcaseWrapper {
                 if (iconButtonsCheckBox) {
                     Notification.show("You clicked Button " + event.getClickedImageButton() + " on image " + LazyLoadingDemo.this.assetName + "!");
                     if (LazyLoadingDemo.BP_CHECK_BUTTON_NAME.equals(event.getClickedImageButton())) {
-                        lazyImage.withSelectListener(event1 -> {
+                        lazyImage.withSelectListener(event1 -> {//
                         });
                     }
                 }
@@ -199,7 +200,7 @@ public class LazyLoadingDemo extends ShowcaseWrapper {
         final RatingStars ratingStars = new RatingStars();
         ratingStars.setMaxValue(5);
         ratingStars.setImmediate(true);
-        ratingStars.addValueChangeListener((ValueChangeListener) (ValueChangeEvent) -> Notification.show("You voted " + ValueChangeEvent.getProperty()
+        ratingStars.addValueChangeListener((ValueChangeListener) ValueChangeEvent -> Notification.show("You voted " + ValueChangeEvent.getProperty()
             .getValue() + " stars for image " + this.assetName + "!"));
         return ratingStars;
     }

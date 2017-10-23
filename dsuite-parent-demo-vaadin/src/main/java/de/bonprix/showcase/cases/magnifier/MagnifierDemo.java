@@ -2,7 +2,9 @@ package de.bonprix.showcase.cases.magnifier;
 
 import java.util.Arrays;
 import java.util.List;
+
 import org.vaadin.addons.magnifier.Magnifier;
+
 import com.vaadin.server.ExternalResource;
 import com.vaadin.server.Sizeable;
 import com.vaadin.ui.Alignment;
@@ -25,6 +27,7 @@ public class MagnifierDemo extends ShowcaseWrapper {
         super("INTERACTION", "MAGNIFIER");
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected com.vaadin.ui.Component createLayout() {
 
@@ -49,7 +52,7 @@ public class MagnifierDemo extends ShowcaseWrapper {
             image.setImmediate(true);
             image.setHeight(300, Unit.PIXELS);
             image.setWidth(200, Unit.PIXELS);
-            image.addClickListener((event) -> {
+            image.addClickListener(event -> {
                 magnifier.setImageUrl(imageUrl.getImageUrl());
                 magnifier.setZoomImageUrl(imageUrl.getImageZoomUrl());
             });

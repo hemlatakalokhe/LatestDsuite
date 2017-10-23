@@ -20,16 +20,9 @@ import de.bonprix.vaadin.theme.DSuiteTheme;
 
 @SuppressWarnings("rawtypes")
 public class AddStyleWizardTwo extends AbstractWizardStep {
-
-    /**
-     * 
-     */
     private static final long serialVersionUID = 5690949762492030761L;
-    private TextField styleNo;
-    private TextField styleDesc;
-    private BeanItemComboBox<Country> countryComboBox;
-    private BeanItemComboBox<Client> clientComboBox;
-    private BeanItemComboBox<Season> seasonComboBox;
+
+    @SuppressWarnings("unused")
     private BeanFieldGroup<Style> fieldGroup;
     @SuppressWarnings("unused")
     private final StyleWizardPojo styleWizardPojo;
@@ -42,29 +35,34 @@ public class AddStyleWizardTwo extends AbstractWizardStep {
 
     @Override
     public Component layout() {
-        this.styleNo = FluentUI.textField()
+        TextField styleNo;
+        TextField styleDesc;
+        BeanItemComboBox<Country> countryComboBox;
+        BeanItemComboBox<Client> clientComboBox;
+        BeanItemComboBox<Season> seasonComboBox;
+        styleNo = FluentUI.textField()
             .caption("Style Number")
             .required(true)
             .get();
-        this.styleDesc = FluentUI.textField()
+        styleDesc = FluentUI.textField()
             .caption("Style Description")
             .required(true)
             .get();
-        this.countryComboBox = FluentUI.beanItemComboBox(Country.class)
+        countryComboBox = FluentUI.beanItemComboBox(Country.class)
             .caption("Country")
             .required(true)
             .get();
-        this.clientComboBox = FluentUI.beanItemComboBox(Client.class)
+        clientComboBox = FluentUI.beanItemComboBox(Client.class)
             .caption("Client")
             .required(true)
             .get();
-        this.seasonComboBox = FluentUI.beanItemComboBox(Season.class)
+        seasonComboBox = FluentUI.beanItemComboBox(Season.class)
             .caption("Season")
             .required(true)
             .get();
 
         final FormLayout layout = FluentUI.form()
-            .add(this.styleDesc, this.styleNo, this.countryComboBox, this.clientComboBox, this.seasonComboBox)
+            .add(styleDesc, styleNo, countryComboBox, clientComboBox, seasonComboBox)
             .get();
         final VerticalLayout verticalLayout = FluentUI.vertical()
             .add(layout)

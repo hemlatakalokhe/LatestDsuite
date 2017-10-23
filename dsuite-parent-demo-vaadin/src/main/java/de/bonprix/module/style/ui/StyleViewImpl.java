@@ -89,9 +89,9 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
     private ScrollablePanel scrollablePanel;
     private int count = 0;
     @Resource
-    private UiNavigationProvider navigationProvider;
+    private transient UiNavigationProvider navigationProvider;
     @Resource
-    private UiNotificationProvider notificationProvider;
+    private transient UiNotificationProvider notificationProvider;
 
     @Override
     protected void initializeUI() {

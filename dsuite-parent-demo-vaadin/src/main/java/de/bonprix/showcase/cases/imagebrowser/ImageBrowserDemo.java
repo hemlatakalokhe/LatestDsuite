@@ -20,46 +20,46 @@ import de.bonprix.vaadin.ui.enums.ZoomType;
  * @author s.amin
  *
  */
+@SuppressWarnings("serial")
 @SpringViewComponent
 public class ImageBrowserDemo extends ShowcaseWrapper {
 
-	public ImageBrowserDemo() {
-		super("CUSTOM_COMPONENTS", "IMAGEBROWSER");
-	}
+    public ImageBrowserDemo() {
+        super("CUSTOM_COMPONENTS", "IMAGEBROWSER");
+    }
 
-	@Override
-	protected Component createLayout() {
-		return FluentUI.vertical()
-			.margin()
-			.add(FluentUI.button()
-				.style(DSuiteTheme.BUTTON_PRIMARY)
-				.captionKey("show Image Browser(Slider)")
-				.onClick(event -> openImageBrowser(getMultiSizeImages(), ZoomType.SLIDERZOOM))
-				.get())
-			.add(FluentUI.button()
-				.style(DSuiteTheme.BUTTON_PRIMARY)
-				.captionKey("show Image Browser(Magnifier)")
-				.onClick(event -> openImageBrowser(getMultiSizeImages(), ZoomType.MAGNIFIER))
-				.get())
-			.get();
-	}
+    @Override
+    protected Component createLayout() {
+        return FluentUI.vertical()
+            .margin()
+            .add(FluentUI.button()
+                .style(DSuiteTheme.BUTTON_PRIMARY)
+                .captionKey("show Image Browser(Slider)")
+                .onClick(event -> openImageBrowser(getMultiSizeImages(), ZoomType.SLIDERZOOM))
+                .get())
+            .add(FluentUI.button()
+                .style(DSuiteTheme.BUTTON_PRIMARY)
+                .captionKey("show Image Browser(Magnifier)")
+                .onClick(event -> openImageBrowser(getMultiSizeImages(), ZoomType.MAGNIFIER))
+                .get())
+            .get();
+    }
 
-	private List<MultiSizeImage> getMultiSizeImages() {
-		final List<MultiSizeImage> urlList = new ArrayList<>();
-		int count = 0;
-		for (final String urls : DummyAssets.getAssetUrls()) {
-			final MultiSizeImage images = new SimpleMultiSizeImage(
-					"Image with some caption loooooooooooooooooooooooooong textttttttttttt" + (++count), urls);
-			urlList.add(images);
-		}
-		return urlList;
-	}
+    private List<MultiSizeImage> getMultiSizeImages() {
+        final List<MultiSizeImage> urlList = new ArrayList<>();
+        int count = 0;
+        for (final String urls : DummyAssets.getAssetUrls()) {
+            final MultiSizeImage images = new SimpleMultiSizeImage("Image with some caption loooooooooooooooooooooooooong textttttttttttt" + (++count), urls);
+            urlList.add(images);
+        }
+        return urlList;
+    }
 
-	public void openImageBrowser(final List<MultiSizeImage> urlList, final ZoomType zoomFunction) {
-		final ImageBrowser imageBrowser = new ImageBrowser(urlList, zoomFunction);
-		imageBrowser.maxZoomSize(1850D);
-		UI.getCurrent()
-			.addWindow(imageBrowser);
-	}
+    public void openImageBrowser(final List<MultiSizeImage> urlList, final ZoomType zoomFunction) {
+        final ImageBrowser imageBrowser = new ImageBrowser(urlList, zoomFunction);
+        imageBrowser.maxZoomSize(1850D);
+        UI.getCurrent()
+            .addWindow(imageBrowser);
+    }
 
 }

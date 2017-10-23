@@ -66,7 +66,7 @@ public class UpdateMvpDialogPresenter extends AbstractMvpDialogPresenter<UpdateM
 
     @Resource
     private EventBus localEventBus;
-    public static Long styleId;
+    private static Long styleId;
 
     @PostConstruct
     public void initialize() {

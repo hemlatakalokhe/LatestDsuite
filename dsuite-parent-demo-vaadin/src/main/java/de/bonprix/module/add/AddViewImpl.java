@@ -1,11 +1,14 @@
 package de.bonprix.module.add;
 
 import java.util.List;
+
 import javax.annotation.Resource;
+
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.TextField;
+
 import de.bonprix.VaadinUI;
 import de.bonprix.base.demo.dto.Country;
 import de.bonprix.base.demo.dto.Planperiod;
@@ -31,38 +34,39 @@ public class AddViewImpl extends AbstractMvpView<AddView.AddPresenter> implement
     private static final long serialVersionUID = 2688782241672861374L;
     public static final String VIEW_NAME = "Add";
     private CheckBox checkBox;
-    private TextField styleNo;
-    private TextField styleDesc;
     private BeanItemComboBox<Country> countryComboBox;
     @Resource
     private UiNotificationProvider notificatonProvider;
-    private Button save;
-    private Button cancel;
 
     @Override
     protected void initializeUI() {
+        final Button save;
+        final Button cancel;
+        TextField styleNo;
+        TextField styleDesc;
+
         this.checkBox = new CheckBox("SHOW_INTERCEPTOR_DIALOG");
-        this.styleNo = FluentUI.textField()
+        styleNo = FluentUI.textField()
             .caption("Style Number")
             .get();
-        this.styleDesc = FluentUI.textField()
+        styleDesc = FluentUI.textField()
             .caption("Style Description")
             .get();
         this.countryComboBox = FluentUI.beanItemComboBox(Country.class)
             .caption("Country")
             .get();
-        this.cancel = FluentUI.button()
+        cancel = FluentUI.button()
             .caption("Cancel")
             .onClick(e1 -> tryNavigateTo(new NavigationRequest(StyleViewImpl.VIEW_NAME)))
             .get();
-        this.save = FluentUI.button()
+        save = FluentUI.button()
             .caption("Save")
-            .onClick(e -> getPresenter().saveStyle(this.styleNo.getValue(), this.styleDesc.getValue(), this.countryComboBox.getSelectedItem()))
+            .onClick(e -> getPresenter().saveStyle(styleNo.getValue(), styleDesc.getValue(), this.countryComboBox.getSelectedItem()))
             .get();
 
         setCompositionRoot(FluentUI.form()
-            .add(this.styleNo, this.styleDesc, this.countryComboBox, FluentUI.horizontal()
-                .add(this.save, this.cancel)
+            .add(styleNo, styleDesc, this.countryComboBox, FluentUI.horizontal()
+                .add(save, cancel)
                 .spacing(true)
                 .get())
             .spacing(true)
@@ -77,11 +81,12 @@ public class AddViewImpl extends AbstractMvpView<AddView.AddPresenter> implement
 
     @Override
     public void setAllBeans(final List<Planperiod> beans) {
-
+        //
     }
 
     @Override
     public void setAllStyleBeans(final List<Style> beans) {
+        //
     }
 
     @Override

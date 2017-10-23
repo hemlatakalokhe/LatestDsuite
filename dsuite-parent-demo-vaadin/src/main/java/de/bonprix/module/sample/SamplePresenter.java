@@ -10,15 +10,10 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
-public class SamplePresenter extends AbstractMvpViewPresenter<SampleViewImpl>
-implements SampleView.SamplePresenter {
-
-    /*	@Resource
-	private PlanperiodService planperiod;*/
+public class SamplePresenter extends AbstractMvpViewPresenter<SampleViewImpl> implements SampleView.SamplePresenter {
 
     @Resource
     private CountryService countryService;
-
 
     @Override
     public void init() {
@@ -27,7 +22,7 @@ implements SampleView.SamplePresenter {
 
     @Override
     public void onViewEnter() {
-
+        //
     }
 
     @Override
@@ -42,6 +37,7 @@ implements SampleView.SamplePresenter {
             return;
         }
 
-        MessageBox.showQuestion("Do you really want to proceed?",  () -> super.tryNavigateTo(request), DialogButton.PRINT);	}
+        MessageBox.showQuestion("Do you really want to proceed?", () -> super.tryNavigateTo(request), DialogButton.PRINT);
+    }
 
 }

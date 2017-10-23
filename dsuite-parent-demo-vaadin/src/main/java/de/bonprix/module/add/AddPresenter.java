@@ -4,6 +4,7 @@
 package de.bonprix.module.add;
 
 import javax.annotation.Resource;
+
 import de.bonprix.base.demo.dto.Country;
 import de.bonprix.base.demo.dto.Style;
 import de.bonprix.base.demo.service.CountryService;
@@ -38,6 +39,7 @@ public class AddPresenter extends AbstractMvpViewPresenter<AddView> implements A
 
     @Override
     public void init() {
+        //
     }
 
     @Override

@@ -22,48 +22,44 @@ import de.bonprix.vaadin.shortcut.ShortcutHandler;
 @SpringViewComponent
 public class ShortcutDemo extends ShowcaseWrapper {
 
-	@Autowired
-	private ShortcutHandler shortcutHandler;
+    @Autowired
+    private ShortcutHandler shortcutHandler;
 
-	private TextField textField;
+    private ShortcutListener action;
 
-	private TextField textField2;
+    private ShortcutListener action2;
 
-	private ShortcutListener action;
+    public ShortcutDemo() {
+        super("INTERACTION", "SHORTCUTDEMO");
+    }
 
-	private ShortcutListener action2;
+    @PostConstruct
+    public void init() {
+        this.shortcutHandler.createShortcut(this.action, ShowCaseViewImpl.VIEW_NAME, I18N.get("SHORTCUT_DESCRIPTION_FIRST"));
 
-	public ShortcutDemo() {
-		super("INTERACTION", "SHORTCUTDEMO");
-	}
+        this.shortcutHandler.createShortcut(this.action2, ShowCaseViewImpl.VIEW_NAME, I18N.get("SHORTCUT_DESCRIPTION_FIRST"));
+    }
 
-	@PostConstruct
-	public void init() {
-		this.shortcutHandler.createShortcut(this.action, ShowCaseViewImpl.VIEW_NAME,
-											I18N.get("SHORTCUT_DESCRIPTION_FIRST"));
+    @Override
+    protected Component createLayout() {
+        TextField textField;
 
-		this.shortcutHandler.createShortcut(this.action2, ShowCaseViewImpl.VIEW_NAME,
-											I18N.get("SHORTCUT_DESCRIPTION_FIRST"));
-	}
+        TextField textField2;
+        textField = new TextField("Focus by Alt+j");
+        textField2 = new TextField("Focus by Alt+k");
 
-	@Override
-	protected Component createLayout() {
+        this.action = new AbstractField.FocusShortcut(textField, KeyCode.J, ModifierKey.ALT);
+        this.action2 = new AbstractField.FocusShortcut(textField2, KeyCode.K, ModifierKey.ALT);
 
-		this.textField = new TextField("Focus by Alt+j");
-		this.textField2 = new TextField("Focus by Alt+k");
+        textField.addShortcutListener(this.action);
+        textField2.addShortcutListener(this.action2);
 
-		this.action = new AbstractField.FocusShortcut(this.textField, KeyCode.J, ModifierKey.ALT);
-		this.action2 = new AbstractField.FocusShortcut(this.textField2, KeyCode.K, ModifierKey.ALT);
-
-		this.textField.addShortcutListener(this.action);
-		this.textField2.addShortcutListener(this.action2);
-
-		return FluentUI.horizontal()
-			.margin()
-			.spacing()
-			.add(this.textField)
-			.add(this.textField2)
-			.get();
-	}
+        return FluentUI.horizontal()
+            .margin()
+            .spacing()
+            .add(textField)
+            .add(textField2)
+            .get();
+    }
 
 }
