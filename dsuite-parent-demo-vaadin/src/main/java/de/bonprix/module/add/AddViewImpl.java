@@ -36,7 +36,7 @@ public class AddViewImpl extends AbstractMvpView<AddView.AddPresenter> implement
     private CheckBox checkBox;
     private BeanItemComboBox<Country> countryComboBox;
     @Resource
-    private UiNotificationProvider notificatonProvider;
+    private transient UiNotificationProvider notificatonProvider;
 
     @Override
     protected void initializeUI() {

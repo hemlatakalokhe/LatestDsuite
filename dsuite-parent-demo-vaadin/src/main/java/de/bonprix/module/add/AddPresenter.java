@@ -35,7 +35,7 @@ public class AddPresenter extends AbstractMvpViewPresenter<AddView> implements A
     private CountryService country;
 
     @Resource
-    private UiNavigationProvider navigationProvider;
+    private transient UiNavigationProvider navigationProvider;
 
     @Override
     public void init() {
