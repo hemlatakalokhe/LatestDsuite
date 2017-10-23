@@ -23,12 +23,13 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.Tree;
 import com.vaadin.ui.renderers.DateRenderer;
 
+import de.bonprix.I18N;
 import de.bonprix.VaadinUI;
 import de.bonprix.base.demo.dto.Country;
 import de.bonprix.base.demo.dto.Style;
 import de.bonprix.model.enums.Mode;
 import de.bonprix.module.style.StyleView;
-import de.bonprix.vaadin.bean.field.BeanItemComboBox;
+import de.bonprix.vaadin.bean.field.BeanItemComboBoxMultiselect;
 import de.bonprix.vaadin.bean.grid.BeanItemGrid;
 import de.bonprix.vaadin.bean.grid.FilterHeader;
 import de.bonprix.vaadin.bean.grid.builder.DateFieldRendererPropertiesBuilder;
@@ -76,7 +77,7 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
     private Tree tree;
     private List<Style> styles;
     private TextField filter;
-    private BeanItemComboBox<Country> countryComboBox;
+    private BeanItemComboBoxMultiselect<Country> countryComboBox;
     private ItemEditListener<String> itemEdit;
     private Button inlineEdit;
     private Style inhabitant;
@@ -86,7 +87,7 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
     private BeanItemGrid<Country> countryGrid;
     private SliderPanelNoLayover sliderPanelNoLayover;
     private ScrollablePanel scrollablePanel;
-    private static int count = 0;
+    private int count = 0;
     @Resource
     private UiNavigationProvider navigationProvider;
     @Resource
@@ -140,6 +141,7 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
         return this.scrollablePanel;
     }
 
+    @SuppressWarnings({})
     public void initializeButtons() {
         addMenuElement(new ComponentBarItem(StyleViewImpl.CREATE, StyleViewImpl.CREATE));
         addMenuElement(new ComponentBarItem(StyleViewImpl.STYLE, StyleViewImpl.STYLE).withParentId(StyleViewImpl.CREATE)
@@ -157,8 +159,7 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
         this.filter.setInputPrompt("Style No");
         this.countryGrid = new BeanItemGrid<>(Country.class);
         this.countryGrid.setColumns("id", "name", "isoCode");
-        this.countryComboBox = new BeanItemComboBox<>(Country.class);
-        this.countryComboBox.setInputPrompt("Country");
+
     }
 
     private void logout() {
@@ -170,11 +171,11 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
     }
 
     private void getTreeView() {
-        StyleViewImpl.count++;
+        this.count++;
         this.tree.setCaption("Styles");
         this.getPresenter()
             .setTree(this.tree);
-        if (StyleViewImpl.count % 2 != 0) {
+        if (this.count % 2 != 0) {
             this.tree.setVisible(true);
         }
         else {
@@ -189,6 +190,10 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
     }
 
     public void initializeGrid() {
+        this.countryComboBox = FluentUI.beanItemComboBoxMultiselect(Country.class)
+            .inputPromptKey(I18N.get("Country"))
+            .selectAllButton()
+            .get();
         this.styleGrid = new BeanItemGrid<>(Style.class);
         this.styleGrid.setSelectionMode(TableSelectionMode.SINGLE);
         this.styleGrid.setColumns("id", StyleViewImpl.DESCRIPTION, StyleViewImpl.STYLE_NO, StyleViewImpl.COUNTRY, StyleViewImpl.DATE);
@@ -246,6 +251,7 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
 
     @Override
     public void checkCheckBox(final NavigationRequest request) {
+        //
     }
 
     public void delete(final Style style) {
@@ -263,8 +269,7 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
         this.countryComboBox.addAllBeans(coutryBeans);
         this.styleGrid.addAllBeans(this.styles);
         this.countryGrid.addAllBeans(coutryBeans);
-        this.filterHeader.addComboBoxFilter(StyleViewImpl.COUNTRY, "Country", coutryBeans);
-
+        this.filterHeader.addComboBoxFilter(StyleViewImpl.COUNTRY, I18N.get("Country"), this.countryComboBox.getAllBeans());
     }
 
     @Override
@@ -279,13 +284,14 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
 
     @Override
     public void setSliderGridData(final List<Style> style) {
+        //
     }
 
     @Override
     public void resfreshGrid(final List<Style> style) {
         if (this.tree.isVisible()) {
             this.tree.setVisible(false);
-            StyleViewImpl.count++;
+            this.count++;
         }
         this.styleGrid.replaceAllBeans(style);
     }

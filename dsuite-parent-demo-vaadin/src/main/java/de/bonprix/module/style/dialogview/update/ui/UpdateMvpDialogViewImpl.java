@@ -62,28 +62,28 @@ public class UpdateMvpDialogViewImpl extends AbstractMvpDialogView<UpdateMvpDial
         this.loginFieldGroup = new BeanItemFieldGroup<>(Login.class);
         this.loginFieldGroup.setBuffered(false);
         addButtonListener(DialogButton.OK, event -> {
-            if (isValid()) {
-                if (this.mode.equals(Mode.ADD) || this.mode.equals(Mode.EDIT)) {
+
+            if (this.mode.equals(Mode.ADD) || this.mode.equals(Mode.EDIT)) {
+                if (isValid()) {
                     getPresenter().updateData(this.styleNumber.getValue(), this.desc.getValue(), this.countryComboBox.getSelectedItem(),
                                               this.clientComboBox.getSelectedItem(), this.seasonComboBox.getSelectedItem(), this.mode);
                     close();
                 }
             }
-            else if (this.mode.equals(Mode.REGISTER)) {
-                if (this.loginFieldGroup.isValid()) {
-                    if (passwordCheck()) {
-                        getPresenter().registerUser(this.username.getValue(), this.password.getValue(), this.name.getValue(), this.lname.getValue());
-                        close();
-                    }
-                    else {
-                        this.notificationProvider.showErrorMessageBox("Enter correct Password");
-                        this.cpassword.focus();
-                    }
+            else if (this.loginFieldGroup.isValid()) {
+                if (passwordCheck()) {
+                    getPresenter().registerUser(this.username.getValue(), this.password.getValue(), this.name.getValue(), this.lname.getValue());
+                    close();
                 }
                 else {
-                    this.notificationProvider.showErrorMessageBox("Enter Mandatory fields");
+                    this.notificationProvider.showErrorNotification("", "Enter correct Password");
+                    this.cpassword.focus();
                 }
             }
+            else {
+                this.notificationProvider.showErrorNotification("", "Enter Mandatory fields");
+            }
+
         });
     }
 

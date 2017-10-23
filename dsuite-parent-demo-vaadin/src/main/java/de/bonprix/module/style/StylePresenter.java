@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Tree;
+
 import de.bonprix.base.demo.dto.Country;
 import de.bonprix.base.demo.dto.Item;
 import de.bonprix.base.demo.dto.ItemSize;
@@ -57,7 +58,7 @@ public class StylePresenter extends AbstractMvpViewPresenter<StyleView> implemen
 
     @Override
     public void onViewEnter() {
-
+        //
     }
 
     @Override
@@ -142,7 +143,6 @@ public class StylePresenter extends AbstractMvpViewPresenter<StyleView> implemen
         }
         this.getView()
             .displayTree(tree);
-
     }
 
     @Override
@@ -168,7 +168,7 @@ public class StylePresenter extends AbstractMvpViewPresenter<StyleView> implemen
 
     @Override
     public void openDeleteDialog(final Style style) {
-
+        //
     }
 
     @Override

@@ -2,8 +2,11 @@ package de.bonprix.module.style.dialogview.update;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+
+import org.apache.commons.collections.CollectionUtils;
 
 import de.bonprix.base.demo.dto.Client;
 import de.bonprix.base.demo.dto.Country;
@@ -75,7 +78,6 @@ public class UpdateMvpDialogPresenter extends AbstractMvpDialogPresenter<UpdateM
         getView().setHeadLine(event.getMode());
     }
 
-    @SuppressWarnings("unchecked")
     @EventHandler
     public void eventHandler(final DialogEvent event) {
         UpdateMvpDialogPresenter.styleId = 0l;
@@ -121,7 +123,7 @@ public class UpdateMvpDialogPresenter extends AbstractMvpDialogPresenter<UpdateM
                 logins.add(login);
             }
         }
-        if (logins.size() != 0) {
+        if (CollectionUtils.isNotEmpty(logins)) {
             this.notificationProvider.showErrorMessageBox("Username Already exist");
         }
         else {
