@@ -15,58 +15,67 @@ import de.bonprix.vaadin.provider.UiNotificationProvider;
 @SpringViewComponent
 public class PreferencesDemo extends ShowcaseWrapper {
 
-	private static final String DEMO_PREFERENCES_NAME = "DEMO_PREFERENCES";
+    private static final String DEMO_PREFERENCES_NAME = "DEMO_PREFERENCES";
 
-	@Resource
-	private AsynchronousPreferencesService asynchronousPreferencesService;
+    @Resource
+    private AsynchronousPreferencesService asynchronousPreferencesService;
 
-	@Resource
-	private UiNotificationProvider notificationProvider;
+    @Resource
+    private UiNotificationProvider notificationProvider;
 
-	private TextField preferencesField;
+    private TextField preferencesField;
 
-	public PreferencesDemo() {
-		super("SYSTEM", "PREFERENCESDEMO");
-	}
+    public PreferencesDemo() {
+        super("SYSTEM", "PREFERENCESDEMO");
+    }
 
-	private void loadPreferences() {
-		this.preferencesField
-			.setValue(this.asynchronousPreferencesService.getStringPreference(PreferencesDemo.DEMO_PREFERENCES_NAME));
+    private void loadPreferences() {
+        this.preferencesField.setValue(this.asynchronousPreferencesService.getStringPreference(PreferencesDemo.DEMO_PREFERENCES_NAME));
 
-	}
+    }
 
-	private void savePreferences(final String preferences) {
-		this.asynchronousPreferencesService.setPreference(PreferencesDemo.DEMO_PREFERENCES_NAME, preferences);
+    private void savePreferences(final String preferences) {
+        this.asynchronousPreferencesService.setPreference(PreferencesDemo.DEMO_PREFERENCES_NAME, preferences);
 
-	}
+    }
 
-	@Override
-	protected Component createLayout() {
-		this.preferencesField = FluentUI.textField()
-			.captionKey("PREFERENCES")
-			.widthFull()
-			.get();
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
 
-		return FluentUI.vertical()
-			.margin()
-			.spacing()
-			.sizeUndefined()
-			.add(this.preferencesField)
-			.add(FluentUI.horizontal()
-				.spacing()
-				.add(FluentUI.button()
-					.captionKey("SAVE")
-					.onClick(event -> {
-						savePreferences(this.preferencesField.getValue());
-						this.notificationProvider.showWarningMessageBox("PREFERENCES_INFO_60_SECONDS_SAVE_SCHEDULER");
-					})
-					.get())
-				.add(FluentUI.button()
-					.captionKey("LOAD")
-					.onClick(event -> loadPreferences())
-					.get())
-				.get())
-			.get();
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
-	}
+    @Override
+    protected Component createLayout() {
+        this.preferencesField = FluentUI.textField()
+            .captionKey("PREFERENCES")
+            .widthFull()
+            .get();
+
+        return FluentUI.vertical()
+            .margin()
+            .spacing()
+            .sizeUndefined()
+            .add(this.preferencesField)
+            .add(FluentUI.horizontal()
+                .spacing()
+                .add(FluentUI.button()
+                    .captionKey("SAVE")
+                    .onClick(event -> {
+                        savePreferences(this.preferencesField.getValue());
+                        this.notificationProvider.showWarningMessageBox("PREFERENCES_INFO_60_SECONDS_SAVE_SCHEDULER");
+                    })
+                    .get())
+                .add(FluentUI.button()
+                    .captionKey("LOAD")
+                    .onClick(event -> loadPreferences())
+                    .get())
+                .get())
+            .get();
+
+    }
 }

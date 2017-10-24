@@ -16,7 +16,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
 import de.bonprix.vaadin.provider.UiNavigationProvider;
 
 @SpringPresenter
-public class UpdatePresenter extends AbstractMvpViewPresenter<UpdateView> implements UpdateView.UpdatePresenter {
+public class UpdatePresenter extends AbstractMvpViewPresenter<UpdateView> implements UpdateView.Presenter {
 
     @Resource
     private StyleService style;
@@ -25,7 +25,7 @@ public class UpdatePresenter extends AbstractMvpViewPresenter<UpdateView> implem
     @Resource
     private CountryService country;
     @Resource
-    private transient UiNavigationProvider navigationProvider;
+    private UiNavigationProvider navigationProvider;
     private static Long id;
 
     @Override
@@ -37,6 +37,16 @@ public class UpdatePresenter extends AbstractMvpViewPresenter<UpdateView> implem
     public void onViewEnter() {
         //
 
+    }
+
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 
     @Override

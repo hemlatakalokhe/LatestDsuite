@@ -17,7 +17,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
  */
 public interface StyleView extends MvpView {
 
-    interface StylePresenter extends MvpViewPresenter<StyleView> {
+    interface Presenter extends MvpViewPresenter<StyleView> {
 
         void proceedCheckBox(Boolean value, NavigationRequest request);
 

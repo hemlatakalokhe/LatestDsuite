@@ -8,7 +8,7 @@ import de.bonprix.vaadin.mvp.view.regular.MvpViewPresenter;
 
 public interface RegistrationView extends MvpView {
 
-    interface RegisterPresenter extends MvpViewPresenter<RegistrationViewImpl> {
+    interface Presenter extends MvpViewPresenter<RegistrationViewImpl> {
 
     }
 

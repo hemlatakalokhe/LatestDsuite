@@ -24,83 +24,94 @@ import de.bonprix.I18N;
 import de.bonprix.vaadin.fluentui.FluentUI;
 
 public abstract class ShowcaseWrapper extends CustomComponent {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ShowcaseWrapper.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShowcaseWrapper.class);
 
-	private static final long serialVersionUID = -3423155483250229975L;
+    private static final long serialVersionUID = -3423155483250229975L;
 
-	private final String parentTitle;
-	private final String title;
-	private final String description;
+    private final String parentTitle;
+    private final String title;
+    private final String description;
 
-	public ShowcaseWrapper(final String parentKey, final String captionKey) {
-		this.parentTitle = I18N.get(parentKey);
-		this.title = I18N.get(captionKey + "_TITLE");
-		this.description = I18N.get(captionKey + "_DESCRIPTION");
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
 
-		final Button buttons = new Button(I18N.get("SHOW_SOURCECODE"));
-		buttons.setDescription(I18N.get("SHOW_SOURCECODE_TOOLTIP"));
-		buttons.addClickListener(event -> showSourceCode());
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
-		final Component layout = createLayout();
+    public ShowcaseWrapper(final String parentKey, final String captionKey) {
+        this.parentTitle = I18N.get(parentKey);
+        this.title = I18N.get(captionKey + "_TITLE");
+        this.description = I18N.get(captionKey + "_DESCRIPTION");
 
-		final Panel panel = new Panel();
-		panel.setSizeFull();
-		panel.setContent(layout);
+        final Button buttons = new Button(I18N.get("SHOW_SOURCECODE"));
+        buttons.setDescription(I18N.get("SHOW_SOURCECODE_TOOLTIP"));
+        buttons.addClickListener(event -> showSourceCode());
 
-		final Label captionLabel = new Label(getTitle());
-		captionLabel.setStyleName("showcase-caption");
+        final Component layout = createLayout();
 
-		final Label descriptionLabel = new Label(this.description, ContentMode.HTML);
-		descriptionLabel.setStyleName("showcase-description");
+        final Panel panel = new Panel();
+        panel.setSizeFull();
+        panel.setContent(layout);
 
-		final VerticalLayout mainLayout = FluentUI	.vertical()
-													.spacing()
-													.add(captionLabel)
-													.add(descriptionLabel)
-													.add(buttons)
-													.add(panel)
-													.get();
-		mainLayout.setSizeFull();
-		mainLayout.setExpandRatio(panel, 1);
+        final Label captionLabel = new Label(getTitle());
+        captionLabel.setStyleName("showcase-caption");
 
-		setCompositionRoot(mainLayout);
-	}
+        final Label descriptionLabel = new Label(this.description, ContentMode.HTML);
+        descriptionLabel.setStyleName("showcase-description");
 
-	protected abstract Component createLayout();
+        final VerticalLayout mainLayout = FluentUI.vertical()
+            .spacing()
+            .add(captionLabel)
+            .add(descriptionLabel)
+            .add(buttons)
+            .add(panel)
+            .get();
+        mainLayout.setSizeFull();
+        mainLayout.setExpandRatio(panel, 1);
 
-	public void showSourceCode() {
-		String code = null;
+        setCompositionRoot(mainLayout);
+    }
 
-		try {
-			// Find URL of selected Class (.java)
-			final URL url = this.getClass()
-								.getResource(getClass().getSimpleName() + ".java");
-			// read out complete java file
-			final byte[] encoded = java.nio.file.Files.readAllBytes(Paths.get(new File(url.getFile()).toString()));
-			code = new String(encoded, Charset.defaultCharset());
-		} catch (final IOException e) {
-			ShowcaseWrapper.LOGGER.error("Could not read code for showcase wrapper " + getClass(), e);
-			code = "code is not readable :(";
-		}
+    protected abstract Component createLayout();
 
-		final Window codeWindow = new Window("Code",
-				new Label(String.format("<html><body><pre class=\"prettyprint\">%s</pre></body></html>", code),
-						ContentMode.HTML));
-		codeWindow.setWidth("80%");
-		codeWindow.setHeight("80%");
-		codeWindow.center();
-		UI	.getCurrent()
-			.addWindow(codeWindow);
+    public void showSourceCode() {
+        String code = null;
 
-		JavaScript.eval("if (document.getElementById('scriptPrettify')) { prettyPrint(); } else { var s = document.createElement('script'); s.setAttribute('type', 'text/javascript'); s.setAttribute('id', 'scriptPrettify'); s.setAttribute('src', 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js'); document.head.appendChild(s); }");
-	}
+        try {
+            // Find URL of selected Class (.java)
+            final URL url = this.getClass()
+                .getResource(getClass().getSimpleName() + ".java");
+            // read out complete java file
+            final byte[] encoded = java.nio.file.Files.readAllBytes(Paths.get(new File(url.getFile()).toString()));
+            code = new String(encoded, Charset.defaultCharset());
+        }
+        catch (final IOException e) {
+            ShowcaseWrapper.LOGGER.error("Could not read code for showcase wrapper " + getClass(), e);
+            code = "code is not readable :(";
+        }
 
-	public String getParentTitle() {
-		return this.parentTitle;
-	}
+        final Window codeWindow = new Window("Code",
+                new Label(String.format("<html><body><pre class=\"prettyprint\">%s</pre></body></html>", code), ContentMode.HTML));
+        codeWindow.setWidth("80%");
+        codeWindow.setHeight("80%");
+        codeWindow.center();
+        UI.getCurrent()
+            .addWindow(codeWindow);
 
-	public String getTitle() {
-		return this.title;
-	}
+        JavaScript
+            .eval("if (document.getElementById('scriptPrettify')) { prettyPrint(); } else { var s = document.createElement('script'); s.setAttribute('type', 'text/javascript'); s.setAttribute('id', 'scriptPrettify'); s.setAttribute('src', 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js'); document.head.appendChild(s); }");
+    }
+
+    public String getParentTitle() {
+        return this.parentTitle;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
 
 }

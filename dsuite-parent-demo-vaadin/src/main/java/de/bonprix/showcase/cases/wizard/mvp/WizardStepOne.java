@@ -26,6 +26,16 @@ public class WizardStepOne extends AbstractWizardStep {
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     public Component layout() {
 
         this.textFieldName = new TextField("Name");

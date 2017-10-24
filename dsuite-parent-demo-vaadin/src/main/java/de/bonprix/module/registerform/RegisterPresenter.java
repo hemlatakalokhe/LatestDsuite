@@ -11,7 +11,7 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
-public class RegisterPresenter extends AbstractMvpViewPresenter<RegisterViewImpl> implements RegisterView.RegisterPresenter {
+public class RegisterPresenter extends AbstractMvpViewPresenter<RegisterViewImpl> implements RegisterView.Presenter {
 
     @Resource
     private StyleService style;

@@ -6,7 +6,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
 
 public interface InterceptorView extends MvpView {
 
-	interface InterceptorPresenter extends MvpViewPresenter<InterceptorViewImpl> {
+	interface Presenter extends MvpViewPresenter<InterceptorViewImpl> {
 
 		void proceedCheckBox(Boolean value, NavigationRequest request);
 

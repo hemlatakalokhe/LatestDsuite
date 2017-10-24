@@ -14,7 +14,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
  */
 public interface AddView extends MvpView {
 
-    interface AddPresenter extends MvpViewPresenter<AddView> {
+    interface Presenter extends MvpViewPresenter<AddView> {
 
         /**
          * Proceed check box.

@@ -33,4 +33,13 @@ public class RegisterViewImpl extends AbstractMvpView<RegisterPresenter> impleme
         getPresenter().proceedCheckBox(this.checkBox.getValue(), request);
     }
 
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }

@@ -9,7 +9,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
 
 public interface LoginsView extends MvpView {
 
-    interface LoginPresenter extends MvpViewPresenter<LoginsViewImpl> {
+    interface Presenter extends MvpViewPresenter<LoginsViewImpl> {
 
         void proceedCheckBox(Boolean value, NavigationRequest request);
 

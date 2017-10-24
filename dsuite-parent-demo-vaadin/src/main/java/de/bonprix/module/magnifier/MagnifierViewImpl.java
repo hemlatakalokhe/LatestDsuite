@@ -39,6 +39,16 @@ public class MagnifierViewImpl extends AbstractMvpView<MagnifierPresenter> imple
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     protected void initializeUI() {
         final Magnifier magnifier = new Magnifier();
         magnifier.setHeight(600, Unit.PIXELS);

@@ -22,53 +22,63 @@ import de.bonprix.vaadin.theme.DSuiteTheme;
 @SpringViewComponent
 public class CollapsiblePanelDemo extends ShowcaseWrapper {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Autowired
-	private UiNotificationProvider notificationProvider;
+    @Autowired
+    private UiNotificationProvider notificationProvider;
 
-	public CollapsiblePanelDemo() {
-		super("PANEL", "COLLAPSIBLEPANELDEMO");
-	}
+    public CollapsiblePanelDemo() {
+        super("PANEL", "COLLAPSIBLEPANELDEMO");
+    }
 
-	@Override
-	protected com.vaadin.ui.Component createLayout() {
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
 
-		VerticalLayout layout = FluentUI.vertical()
-			.margin()
-			.spacing()
-			.add(new Label("Lorem ipsum dolor sit amet, consetetur sadipscing elitr."))
-			.get();
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
-		// create the content itself
-		final Panel panel = FluentUI.panel()
-			.sizeUndefined()
-			.captionKey("PANEL")
-			.style(DSuiteTheme.PANEL_INVERTED)
-			.content(layout)
-			.get();
+    @Override
+    protected com.vaadin.ui.Component createLayout() {
 
-		// create the extension that wraps around the panel and makes it
-		// collapsible
-		final CollapsiblePanel cp = new CollapsiblePanel(panel);
+        final VerticalLayout layout = FluentUI.vertical()
+            .margin()
+            .spacing()
+            .add(new Label("Lorem ipsum dolor sit amet, consetetur sadipscing elitr."))
+            .get();
 
-		cp.addCollapseExpandListener(new CollapseExpandListener() {
-			@Override
-			public void expand(final ExpandEvent event) {
-				CollapsiblePanelDemo.this.notificationProvider.showInfoNotification("Component expanded");
-			}
+        // create the content itself
+        final Panel panel = FluentUI.panel()
+            .sizeUndefined()
+            .captionKey("PANEL")
+            .style(DSuiteTheme.PANEL_INVERTED)
+            .content(layout)
+            .get();
 
-			@Override
-			public void collapse(final CollapseEvent event) {
-				CollapsiblePanelDemo.this.notificationProvider.showInfoNotification("Component collapsed");
-			}
-		});
+        // create the extension that wraps around the panel and makes it
+        // collapsible
+        final CollapsiblePanel cp = new CollapsiblePanel(panel);
 
-		cp.setCollapsed(true);
+        cp.addCollapseExpandListener(new CollapseExpandListener() {
+            @Override
+            public void expand(final ExpandEvent event) {
+                CollapsiblePanelDemo.this.notificationProvider.showInfoNotification("Component expanded");
+            }
 
-		return FluentUI.vertical()
-			.margin()
-			.add(panel)
-			.get();
-	}
+            @Override
+            public void collapse(final CollapseEvent event) {
+                CollapsiblePanelDemo.this.notificationProvider.showInfoNotification("Component collapsed");
+            }
+        });
+
+        cp.setCollapsed(true);
+
+        return FluentUI.vertical()
+            .margin()
+            .add(panel)
+            .get();
+    }
 }

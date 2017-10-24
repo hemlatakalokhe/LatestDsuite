@@ -38,7 +38,6 @@ import de.bonprix.vaadin.provider.UiNotificationProvider;
  * @author h.kalokhe
  *
  */
-@SuppressWarnings("rawtypes")
 @SpringPresenter
 public class UpdateMvpDialogPresenter extends AbstractMvpDialogPresenter<UpdateMvpDialogView<UpdateMvpDialogView.Presenter>>
         implements UpdateMvpDialogView.Presenter {

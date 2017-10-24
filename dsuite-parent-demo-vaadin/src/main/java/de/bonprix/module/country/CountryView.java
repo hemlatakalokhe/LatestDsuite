@@ -16,7 +16,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
  */
 public interface CountryView extends MvpView {
 
-    interface StylePresenter extends MvpViewPresenter<CountryViewImpl> {
+    interface Presenter extends MvpViewPresenter<CountryViewImpl> {
 
         /**
          * Proceed check box.

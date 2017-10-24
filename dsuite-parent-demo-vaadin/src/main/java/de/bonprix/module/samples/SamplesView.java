@@ -13,7 +13,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
 
 public interface SamplesView extends MvpView {
 
-	interface SamplesPresenter extends MvpViewPresenter<SamplesViewImpl> {
+	interface Presenter extends MvpViewPresenter<SamplesViewImpl> {
 
 		void proceedCheckBox(Boolean value, NavigationRequest request);
 

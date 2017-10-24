@@ -6,7 +6,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
 
 public interface MagnifierView extends MvpView {
 
-	interface RegisterPresenter extends MvpViewPresenter<MagnifierViewImpl> {
+	interface Presenter extends MvpViewPresenter<MagnifierViewImpl> {
 
 		void proceedCheckBox(Boolean value, NavigationRequest request);
 

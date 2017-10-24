@@ -16,7 +16,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
  *
  */
 @SpringPresenter
-public class CountryPresenter extends AbstractMvpViewPresenter<CountryViewImpl> implements CountryView.StylePresenter {
+public class CountryPresenter extends AbstractMvpViewPresenter<CountryViewImpl> implements CountryView.Presenter {
 
     @Resource
     private StyleService style;

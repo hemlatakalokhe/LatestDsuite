@@ -30,6 +30,16 @@ public class LanguageGridViewImpl extends AbstractMvpView<LanguageGridPresenter>
     public static final String VIEW_NAME = "Language Grid";
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     protected void initializeUI() {
 
         final LanguageContainer languageContainer = new LanguageContainer();

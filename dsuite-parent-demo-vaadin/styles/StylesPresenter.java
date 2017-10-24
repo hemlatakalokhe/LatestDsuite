@@ -36,8 +36,6 @@ public class StylesPresenter extends AbstractMvpViewPresenter<StylesViewImpl>
 	public void onViewEnter() {
 		 
 		getView().setAllBean(this.countryService.findAll(new Paged(0, 100)),this.styleService.findAll(new Paged(0, 100)));
-		 
-		
 		// empty
 	}
 

@@ -77,6 +77,16 @@ public class LoginViewImpl extends AbstractMvpView<LoginPresenter> implements Lo
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     public void checkCheckBox(final NavigationRequest request) {
         getPresenter().proceedCheckBox(this.checkBox.getValue(), request);
     }

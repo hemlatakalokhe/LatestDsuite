@@ -11,7 +11,7 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
-public class MagnifierPresenter extends AbstractMvpViewPresenter<MagnifierViewImpl> implements MagnifierView.RegisterPresenter {
+public class MagnifierPresenter extends AbstractMvpViewPresenter<MagnifierViewImpl> implements MagnifierView.Presenter {
 
     @Resource
     private StyleService style;

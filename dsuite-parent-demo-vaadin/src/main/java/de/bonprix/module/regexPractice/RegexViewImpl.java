@@ -38,4 +38,13 @@ public class RegexViewImpl extends AbstractMvpView<RegexPresenter> implements Re
         //
     }
 
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }

@@ -40,6 +40,7 @@ public class AddStyleWizardPresenterTest extends I18NAwareUnitTest {
     @Mock
     private StyleService styleService;
 
+    @SuppressWarnings("unused")
     private Style style;
 
     @BeforeMethod

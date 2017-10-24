@@ -8,7 +8,7 @@ import de.bonprix.vaadin.mvp.SpringPresenter;
 import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 
 @SpringPresenter
-public class RegistrationPresenter extends AbstractMvpViewPresenter<RegistrationViewImpl> implements RegistrationView.RegisterPresenter {
+public class RegistrationPresenter extends AbstractMvpViewPresenter<RegistrationViewImpl> implements RegistrationView.Presenter {
 
     @Resource
     private UserDataService userDataService;

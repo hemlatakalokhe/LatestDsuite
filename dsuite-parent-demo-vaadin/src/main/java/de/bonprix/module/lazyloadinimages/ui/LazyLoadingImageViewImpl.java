@@ -158,6 +158,16 @@ public class LazyLoadingImageViewImpl extends AbstractMvpView<LazyLoadingImageVi
             .get();
     }
 
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
     @SuppressWarnings("unchecked")
     private void refreshImages(final Boolean showTooltip, final Boolean selectable, final Boolean iconButtonsCheckBox, final Boolean starsAndNameCheckBox,
             final Boolean lazyImageFrameColoredCheckBox, final int selectedNumberOfButtons, final Object selectDeselectComboBox) {

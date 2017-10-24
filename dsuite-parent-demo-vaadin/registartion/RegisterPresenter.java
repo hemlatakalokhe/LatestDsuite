@@ -29,22 +29,15 @@ public class RegisterPresenter extends AbstractMvpViewPresenter<RegisterViewImpl
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
-		
+//		
 	}
 
 	@Override
 	public void onViewEnter() {
-		// TODO Auto-generated method stub
-		
+//		
 	} 
 	
 	 
 
-	/*@Override
-	public void update() {
-		Style style=styleService.findById(id); 
-		addcomponent(style.getStyleNo(), style.getDesc(),style.getCountry());
-	}*/
 
 }

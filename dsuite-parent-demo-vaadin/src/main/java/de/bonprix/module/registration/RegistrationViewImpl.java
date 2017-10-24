@@ -35,6 +35,16 @@ public class RegistrationViewImpl extends AbstractMvpView<RegistrationPresenter>
     private transient UiNotificationProvider notificationProvider;
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     protected void initializeUI() {
 
         TextField name;

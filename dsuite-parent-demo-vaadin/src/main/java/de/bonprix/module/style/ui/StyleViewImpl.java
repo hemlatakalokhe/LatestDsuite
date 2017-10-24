@@ -54,7 +54,7 @@ import de.bonprix.vaadin.ui.SliderPanelNoLayover;
     ui = { VaadinUI.class },
     isDefault = false,
     order = 30)
-public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> implements StyleView {
+public class StyleViewImpl extends AbstractMvpView<StyleView.Presenter> implements StyleView {
     protected static final String COUNTRY = "country";
     protected static final String STYLE = "Style";
     protected static final String EDIT = "Edit";
@@ -92,6 +92,16 @@ public class StyleViewImpl extends AbstractMvpView<StyleView.StylePresenter> imp
     private transient UiNavigationProvider navigationProvider;
     @Resource
     private transient UiNotificationProvider notificationProvider;
+
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
     @Override
     protected void initializeUI() {

@@ -23,7 +23,7 @@ import de.bonprix.vaadin.provider.UiNavigationProvider;
  *
  */
 @SpringPresenter
-public class AddPresenter extends AbstractMvpViewPresenter<AddView> implements AddView.AddPresenter {
+public class AddPresenter extends AbstractMvpViewPresenter<AddView> implements AddView.Presenter {
 
     @Resource
     private StyleService style;

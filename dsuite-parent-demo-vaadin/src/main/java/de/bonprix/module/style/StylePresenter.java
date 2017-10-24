@@ -33,7 +33,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
  *
  */
 @SpringPresenter
-public class StylePresenter extends AbstractMvpViewPresenter<StyleView> implements StyleView.StylePresenter {
+public class StylePresenter extends AbstractMvpViewPresenter<StyleView> implements StyleView.Presenter {
 
     @Resource
     private StyleService styleService;

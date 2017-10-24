@@ -9,7 +9,7 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
-public class LoginsPresenter extends AbstractMvpViewPresenter<LoginsViewImpl> implements LoginsView.LoginPresenter {
+public class LoginsPresenter extends AbstractMvpViewPresenter<LoginsViewImpl> implements LoginsView.Presenter {
 
     @Resource
     private LoginService loginService;

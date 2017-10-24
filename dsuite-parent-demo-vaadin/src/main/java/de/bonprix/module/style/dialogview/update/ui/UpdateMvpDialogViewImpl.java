@@ -241,4 +241,14 @@ public class UpdateMvpDialogViewImpl extends AbstractMvpDialogView<UpdateMvpDial
 
         return true;
     }
+
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }

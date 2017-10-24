@@ -45,6 +45,16 @@ public class SampleViewImpl extends AbstractMvpView<SamplePresenter> implements 
     private static final String CAPTION = "Notification Title";
     private static final String MESSAGE = "A more informative message about what has happened. Nihil hic munitissimus habendi senatus locus, nihil horum? Inmensae subtilitatis, obscuris et malesuada fames. Hi omnes lingua, institutis, legibus inter se differunt.";
 
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
     @SuppressWarnings("unchecked")
     @Override
     protected void initializeUI() {

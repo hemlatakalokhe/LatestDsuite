@@ -26,7 +26,7 @@ import de.bonprix.vaadin.provider.UiNotificationProvider;
     ui = { VaadinUI.class },
     isDefault = false,
     order = 30)
-public class UpdateViewImpl extends AbstractMvpView<UpdateView.UpdatePresenter> implements UpdateView {
+public class UpdateViewImpl extends AbstractMvpView<UpdateView.Presenter> implements UpdateView {
 
     private static final long serialVersionUID = 2688782241672861374L;
     public static final String VIEW_NAME = "Update";

@@ -94,6 +94,16 @@ public class ShowCaseViewImpl extends AbstractMvpView<ShowCasePresenter> impleme
         setSizeFull();
     }
 
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
     private Tree getShowCaseTree(final List<ShowcaseWrapper> showcaseWrappers) {
 
         final Tree showcaseTree = new Tree();

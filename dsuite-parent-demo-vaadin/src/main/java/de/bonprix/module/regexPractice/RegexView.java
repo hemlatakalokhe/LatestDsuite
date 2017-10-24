@@ -9,7 +9,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
 
 public interface RegexView extends MvpView {
 
-	interface SamplePresenter extends MvpViewPresenter<RegexViewImpl> {
+	interface Presenter extends MvpViewPresenter<RegexViewImpl> {
 
 		void proceedCheckBox(Boolean value, NavigationRequest request);
 

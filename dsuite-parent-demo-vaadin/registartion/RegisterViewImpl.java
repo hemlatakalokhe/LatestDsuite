@@ -69,9 +69,8 @@ public class RegisterViewImpl extends AbstractMvpView<RegisterPresenter> impleme
 	public static final String VIEW_NAME = "Register";
 
 	@Resource
-	private UiNotificationProvider notificationProvider;
+	private transient UiNotificationProvider notificationProvider;
 
-	//private FieldGroup fieldGroup;
 
 	private TextField name;
 
@@ -119,16 +118,6 @@ public class RegisterViewImpl extends AbstractMvpView<RegisterPresenter> impleme
 		submit.addClickListener(event ->
 		{
 			 confirmPassword.addValidator(new RegexpValidator(password.getValue(), "cpassword"));
-			 
-			 System.out.println(mobileNo.getValue());
-			 System.out.println("mobileNo.isValid()"+mobileNo.isValid());
-			 System.out.println("cpassword"+confirmPassword);
-			 System.out.println("cpassword.isValid()"+confirmPassword.isValid());
-			 System.out.println("password.isValid()"+ password.isValid());
-			 System.out.println("name.isValid()"+name.isValid());
-			 System.out.println("email.isValid()"+email.isValid());
-			
-			 
 			 
 			if( this.registerFielfGroup.isValid())
 				{ 

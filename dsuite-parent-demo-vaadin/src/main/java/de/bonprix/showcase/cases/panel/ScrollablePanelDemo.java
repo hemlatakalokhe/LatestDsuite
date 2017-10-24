@@ -21,6 +21,16 @@ public class ScrollablePanelDemo extends ShowcaseWrapper {
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     protected com.vaadin.ui.Component createLayout() {
         final ScrollablePanel scrollPanel = new ScrollablePanel();
         this.eventLabel = new Label("Dummy Text");

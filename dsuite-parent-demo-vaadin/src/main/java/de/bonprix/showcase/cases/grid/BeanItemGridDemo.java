@@ -96,6 +96,16 @@ public class BeanItemGridDemo extends ShowcaseWrapper {
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     protected Component createLayout() {
         this.latestChangeLabel = new Label("Latest change: -none-");
         this.itemEdit = event -> BeanItemGridDemo.this.latestChangeLabel.setValue("Latest change: '" + event.getColumnPropertyId() + "' "

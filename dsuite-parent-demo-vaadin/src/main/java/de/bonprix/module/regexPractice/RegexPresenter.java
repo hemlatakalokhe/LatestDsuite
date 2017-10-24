@@ -7,7 +7,7 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
-public class RegexPresenter extends AbstractMvpViewPresenter<RegexViewImpl> implements RegexView.SamplePresenter {
+public class RegexPresenter extends AbstractMvpViewPresenter<RegexViewImpl> implements RegexView.Presenter {
 
     @Override
     public void init() {

@@ -34,6 +34,16 @@ public class AddStyleWizardTwo extends AbstractWizardStep {
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     public Component layout() {
         TextField styleNo;
         TextField styleDesc;

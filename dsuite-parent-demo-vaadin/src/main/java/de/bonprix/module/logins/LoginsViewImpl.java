@@ -11,7 +11,7 @@ import com.vaadin.ui.TextField;
 
 import de.bonprix.VaadinUI;
 import de.bonprix.base.demo.dto.Login;
-import de.bonprix.module.logins.LoginsView.LoginPresenter;
+import de.bonprix.module.logins.LoginsView.Presenter;
 import de.bonprix.vaadin.bean.field.BeanItemComboBox;
 import de.bonprix.vaadin.fluentui.FluentUI;
 import de.bonprix.vaadin.mvp.view.regular.AbstractMvpView;
@@ -23,7 +23,7 @@ import de.bonprix.vaadin.provider.UiNotificationProvider;
     ui = { VaadinUI.class },
     isDefault = false,
     order = 85)
-public class LoginsViewImpl extends AbstractMvpView<LoginPresenter> implements LoginsView {
+public class LoginsViewImpl extends AbstractMvpView<Presenter> implements LoginsView {
 
     /**
      * 
@@ -37,6 +37,16 @@ public class LoginsViewImpl extends AbstractMvpView<LoginPresenter> implements L
 
     private CheckBox checkBox;
     private BeanItemComboBox<Login> LoginCombo;
+
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
     @Override
     protected void initializeUI() {

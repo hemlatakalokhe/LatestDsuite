@@ -10,7 +10,7 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
-public class SamplePresenter extends AbstractMvpViewPresenter<SampleViewImpl> implements SampleView.SamplePresenter {
+public class SamplePresenter extends AbstractMvpViewPresenter<SampleViewImpl> implements SampleView.Presenter {
 
     @Resource
     private CountryService countryService;

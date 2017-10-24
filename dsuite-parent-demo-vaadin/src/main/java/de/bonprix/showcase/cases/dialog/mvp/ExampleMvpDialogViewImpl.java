@@ -9,28 +9,37 @@ import de.bonprix.vaadin.mvp.SpringViewComponent;
 import de.bonprix.vaadin.mvp.dialog.AbstractMvpDialogView;
 
 @SpringViewComponent
-public class ExampleMvpDialogViewImpl extends AbstractMvpDialogView<ExampleMvpDialogPresenter>
-		implements ExampleMvpDialogView<ExampleMvpDialogPresenter> {
+public class ExampleMvpDialogViewImpl extends AbstractMvpDialogView<ExampleMvpDialogPresenter> implements ExampleMvpDialogView<ExampleMvpDialogPresenter> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public ExampleMvpDialogViewImpl() {
-		super(new DialogConfigurationBuilder()	.withHeadline("Example Mvp Dialog")
-												.withHeight(500)
-												.withWidth(500)
-												.withButton(DialogButton.CLOSE)
-												.withCloseOnAnyButton(true)
-												.build());
-	}
+    public ExampleMvpDialogViewImpl() {
+        super(new DialogConfigurationBuilder().withHeadline("Example Mvp Dialog")
+            .withHeight(500)
+            .withWidth(500)
+            .withButton(DialogButton.CLOSE)
+            .withCloseOnAnyButton(true)
+            .build());
+    }
 
-	@Override
-	protected Component layout() {
-		return FluentUI	.vertical()
-						.margin()
-						.add(FluentUI	.label()
-										.captionKey("HELLO_WORLD")
-										.get())
-						.get();
-	}
+    @Override
+    protected Component layout() {
+        return FluentUI.vertical()
+            .margin()
+            .add(FluentUI.label()
+                .captionKey("HELLO_WORLD")
+                .get())
+            .get();
+    }
+
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
 }

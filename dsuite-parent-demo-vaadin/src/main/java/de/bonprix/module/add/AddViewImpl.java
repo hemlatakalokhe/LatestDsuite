@@ -29,7 +29,7 @@ import de.bonprix.vaadin.provider.UiNotificationProvider;
     ui = { VaadinUI.class },
     isDefault = false,
     order = 30)
-public class AddViewImpl extends AbstractMvpView<AddView.AddPresenter> implements AddView {
+public class AddViewImpl extends AbstractMvpView<AddView.Presenter> implements AddView {
 
     private static final long serialVersionUID = 2688782241672861374L;
     public static final String VIEW_NAME = "Add";
@@ -98,6 +98,16 @@ public class AddViewImpl extends AbstractMvpView<AddView.AddPresenter> implement
     @Override
     public void setAllCountryBeans(final List<Country> beans) {
         this.countryComboBox.addAllBeans(beans);
+    }
+
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 
 }

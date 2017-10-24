@@ -6,7 +6,7 @@ import de.bonprix.vaadin.mvp.view.regular.MvpViewPresenter;
 
 public interface LanguageGridView extends MvpView {
 
-    interface LanguageGridPresenter extends MvpViewPresenter<LanguageGridViewImpl> {
+    interface Presenter extends MvpViewPresenter<LanguageGridViewImpl> {
 
     }
 

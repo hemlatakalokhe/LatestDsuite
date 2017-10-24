@@ -40,6 +40,16 @@ public class RestDemo extends ShowcaseWrapper {
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     protected Component createLayout() {
 
         this.applicationsGrid = new BeanItemGrid<>(Application.class);

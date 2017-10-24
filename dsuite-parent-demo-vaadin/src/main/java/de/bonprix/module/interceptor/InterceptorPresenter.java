@@ -7,7 +7,7 @@ import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
 public class InterceptorPresenter extends AbstractMvpViewPresenter<InterceptorViewImpl>
-		implements InterceptorView.InterceptorPresenter {
+		implements InterceptorView.Presenter {
 
 	@Override
 	public void init() {

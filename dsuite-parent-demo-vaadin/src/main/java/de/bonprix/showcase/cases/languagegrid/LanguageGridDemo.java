@@ -35,6 +35,16 @@ public class LanguageGridDemo extends ShowcaseWrapper {
     }
 
     @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     protected Component createLayout() {
         final SimpleI18NLanguageContainer container = new SimpleI18NLanguageContainer();
         final LanguageI18NElementWithDescription firstElement = new LanguageI18NElementWithDescription();

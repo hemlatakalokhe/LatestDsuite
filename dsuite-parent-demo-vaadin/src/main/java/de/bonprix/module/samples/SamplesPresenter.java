@@ -9,7 +9,7 @@ import de.bonprix.vaadin.mvp.view.regular.AbstractMvpViewPresenter;
 import de.bonprix.vaadin.navigator.NavigationRequest;
 
 @SpringPresenter
-public class SamplesPresenter extends AbstractMvpViewPresenter<SamplesViewImpl> implements SamplesView.SamplesPresenter {
+public class SamplesPresenter extends AbstractMvpViewPresenter<SamplesViewImpl> implements SamplesView.Presenter {
 
     @Resource
     private PlanperiodService planperiodService;

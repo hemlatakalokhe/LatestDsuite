@@ -2,7 +2,7 @@ package de.bonprix.languagegrid;
 
 import de.bonprix.dto.AbstractI18NLanguageElement;
 
-public class LanguageElement extends AbstractI18NLanguageElement{
+public class LanguageElement extends AbstractI18NLanguageElement {
     /**
      * 
      */
@@ -15,5 +15,15 @@ public class LanguageElement extends AbstractI18NLanguageElement{
 
     public void setDescription(final String description) {
         this.description = description;
+    }
+
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 }

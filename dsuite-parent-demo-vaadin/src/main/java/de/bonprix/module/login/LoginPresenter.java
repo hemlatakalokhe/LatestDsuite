@@ -24,7 +24,7 @@ import de.bonprix.vaadin.provider.UiNotificationProvider;
  *
  */
 @SpringPresenter
-public class LoginPresenter extends AbstractMvpViewPresenter<LoginViewImpl> implements LoginView.LoginPresenter {
+public class LoginPresenter extends AbstractMvpViewPresenter<LoginViewImpl> implements LoginView.Presenter {
 
     @Resource
     private StyleService style;

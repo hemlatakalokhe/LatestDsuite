@@ -34,7 +34,16 @@ public class SamplesViewImpl extends AbstractMvpView<SamplesPresenter> implement
 
     private BeanItemComboBoxMultiselect<Planperiod> planperiodComboMulti;
 
-    //
+    @Override
+    public boolean equals(final Object object) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
     @Override
     protected void initializeUI() {
         this.planperiodGrid = new BeanItemGrid<>(Planperiod.class);
