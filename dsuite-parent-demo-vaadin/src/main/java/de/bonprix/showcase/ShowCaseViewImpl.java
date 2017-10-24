@@ -36,13 +36,14 @@ public class ShowCaseViewImpl extends AbstractMvpView<ShowCasePresenter> impleme
     public static final String VIEW_NAME = "SHOWCASE";
 
     private HorizontalLayout showCaseComponentWrapper;
-    private HorizontalLayout samplerLayout;
 
     @Resource
-    private ApplicationContext applicationContext;
+    transient ApplicationContext applicationContext;
 
     @PostConstruct
     public void initialize() {
+        HorizontalLayout samplerLayout;
+
         final List<ShowcaseWrapper> showcaseWrappers = getShowcaseWrappers();
 
         final Tree showcaseTree = getShowCaseTree(showcaseWrappers);
@@ -57,7 +58,7 @@ public class ShowCaseViewImpl extends AbstractMvpView<ShowCasePresenter> impleme
 
         final Link vaadinSamplerLink = new Link("vaadin.com/sampler", new ExternalResource("https://demo.vaadin.com/sampler/"));
 
-        this.samplerLayout = FluentUI.horizontal()
+        samplerLayout = FluentUI.horizontal()
             .add(linkLabel)
             .add(vaadinSamplerLink)
             .spacing()
@@ -68,7 +69,7 @@ public class ShowCaseViewImpl extends AbstractMvpView<ShowCasePresenter> impleme
             .margin()
             .spacing()
             .add(FluentUI.vertical()
-                .add(this.samplerLayout)
+                .add(samplerLayout)
                 .add(FluentUI.beanItemComboBox(ShowcaseWrapper.class)
                     .captionKey("SEARCH")
                     .onSelectionChange(event -> {

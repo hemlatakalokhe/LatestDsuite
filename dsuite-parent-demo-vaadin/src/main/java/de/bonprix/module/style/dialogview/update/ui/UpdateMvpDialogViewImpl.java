@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.apache.commons.collections.CollectionUtils;
 
 import com.vaadin.ui.Alignment;
+import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Panel;
@@ -172,6 +173,12 @@ public class UpdateMvpDialogViewImpl extends AbstractMvpDialogView<UpdateMvpDial
     }
 
     public Component registerLayout() {
+        final CheckBox showPassword = FluentUI.checkBox()
+            .caption("Show Password")
+            .get();
+        final TextField passwordField = FluentUI.textField()
+            .caption("Passwprd")
+            .get();
         this.name = FluentUI.textField()
             .caption("First Name")
             .bind(this.loginFieldGroup, "firstname")
@@ -196,8 +203,17 @@ public class UpdateMvpDialogViewImpl extends AbstractMvpDialogView<UpdateMvpDial
             .required()
             .caption("Password")
             .get();
+
+        showPassword.addValueChangeListener(event -> {
+            if (showPassword.isEmpty()) {
+                passwordField.setValue(null);
+            }
+            else {
+                passwordField.setValue(this.password.getValue());
+            }
+        });
         final FormLayout layout = FluentUI.form()
-            .add(this.name, this.lname, this.username, this.password, this.cpassword)
+            .add(this.name, this.lname, this.username, this.password, passwordField, this.cpassword, showPassword)
             .get();
 
         layout.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
@@ -220,9 +236,10 @@ public class UpdateMvpDialogViewImpl extends AbstractMvpDialogView<UpdateMvpDial
 
     private boolean isValid() {
         if (this.styleNumber.getValue()
-            .isEmpty()
+            .isEmpty() && this.styleNumber.getValue() == ""
                 && this.desc.getValue()
-                    .isEmpty()) {
+                    .isEmpty()
+                && this.desc.getValue() == "") {
             this.notificationProvider.showErrorNotification("", "Enter Mandatory fields");
             return false;
         }
